@@ -4,22 +4,38 @@ import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
-const SLIDES = [
+type Slide = {
+  src: string
+  alt: string
+  /** Teks yang muncul di pojok kanan bawah foto. Kosongkan bila tidak perlu. */
+  caption?: string
+}
+
+const SLIDES: Slide[] = [
   {
-    src: '/images/hero-sawah.png',
-    alt: 'Hamparan sawah hijau Dusun Sukomangun dengan latar pegunungan',
+    src: '/images/Gambar-5.jpeg',
+    alt: 'Papan nama Nahdlatul Ulama bertuliskan Dsn. Sukomangun, Genito, Windusari, Magelang, dengan rumah warga dan perbukitan di belakangnya',
+    caption: 'Papan Nama'
   },
   {
-    src: '/images/dusun-jalan.png',
-    alt: 'Jalan utama Dusun Sukomangun yang telah beraspal',
+    src: '/images/Gambar-4.jpeg',
+    alt: 'Lanskap perbukitan hijau dengan ladang berundak dan jalan beraspal yang membelah dusun',
+    caption: 'Perbukitan dan jalan dusun',
   },
   {
-    src: '/images/kesenian.png',
-    alt: 'Pertunjukan kesenian tradisional warga Dusun Sukomangun',
+    src: '/images/Gambar-3.jpeg',
+    alt: 'Ladang sayur berundak di lereng bukit dengan aliran sungai berbatu di bawahnya',
+    caption: 'Ladang sayur di tepi sungai',
   },
   {
-    src: '/images/dusun-jalan.png',
-    alt: 'Jalan utama Dusun Sukomangun yang telah beraspal',
+    src: '/images/Gambar-2.jpeg',
+    alt: 'Sekelompok pemuda duduk mengelilingi api unggun di jalan dusun pada malam hari',
+    caption: 'Kumpul malam pemuda dusun',
+  },
+  {
+    src: '/images/Gambar-1.jpeg',
+    alt: 'Warga berkumpul duduk bersila di dalam rumah sambil membaca kitab dalam pengajian rutin',
+    caption: 'Pengajian rutin warga',
   },
 ]
 
@@ -130,7 +146,7 @@ export function HeroGallery() {
           className="flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain rounded-3xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden cursor-grab select-none active:cursor-grabbing focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
         >
           {SLIDES.map((slide, i) => (
-            <div
+            <figure
               key={i}
               data-slide
               className="relative aspect-[4/3] w-[86%] shrink-0 snap-start overflow-hidden rounded-3xl shadow-lg shadow-primary/10 ring-1 ring-border sm:aspect-[3/2] sm:w-[62%] lg:w-[46%]"
@@ -143,7 +159,19 @@ export function HeroGallery() {
                 sizes="(min-width: 1024px) 46vw, (min-width: 640px) 62vw, 86vw"
                 className="pointer-events-none object-cover"
               />
-            </div>
+              {slide.caption && (
+                <>
+                  {/* Bayangan gelap tipis supaya teks tetap terbaca di atas foto terang */}
+                  <div
+                    className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-foreground/70 to-transparent"
+                    aria-hidden="true"
+                  />
+                  <figcaption className="pointer-events-none absolute bottom-3 right-4 max-w-[80%] text-balance font-serif text-right text-base font-bold leading-snug text-primary-foreground [text-shadow:0_1px_6px_rgb(0_0_0/0.55)] sm:bottom-4 sm:right-5 sm:text-lg">
+                    {slide.caption}
+                  </figcaption>
+                </>
+              )}
+            </figure>
           ))}
         </div>
 

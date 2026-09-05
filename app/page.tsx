@@ -6,6 +6,7 @@ import { GeographySection } from '@/components/geography-section'
 import { HeroSection } from '@/components/hero-section'
 import { HopesSection } from '@/components/hopes-section'
 import { LeadersSection } from '@/components/leaders-section'
+import { MapSection } from '@/components/map-section'
 import { PopulationSection } from '@/components/population-section'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteNavbar } from '@/components/site-navbar'
@@ -18,6 +19,7 @@ export default function Page() {
         <HeroSection />
         <AboutSection />
         <GeographySection />
+        <MapSection />
         <PopulationSection />
         <ArtsSection />
         <ActivitiesSection />

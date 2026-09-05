@@ -42,10 +42,7 @@ export function SiteNavbar() {
         className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6"
       >
         <a href="#beranda" className="flex items-center gap-2 font-serif font-bold">
-          <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-            <Leaf className="size-5" aria-hidden="true" />
-          </span>
-          <span className="text-base leading-tight">
+          <span className="text-lg leading-tight">
             Dusun <span className="text-primary">Sukomangun</span>
           </span>
         </a>

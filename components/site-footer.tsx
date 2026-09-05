@@ -1,6 +1,8 @@
 import { Leaf, MapPin } from 'lucide-react'
 
 const FOOTER_LINKS = [
+  { href: '#Potensi', label: 'Potensi' },
+  { href: '#Galeri', label: 'Galeri' },
   { href: '#tentang', label: 'Tentang' },
   { href: '#geografi', label: 'Geografi' },
   { href: '#kesenian', label: 'Kesenian' },
@@ -15,9 +17,6 @@ export function SiteFooter() {
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="flex max-w-sm flex-col gap-4">
             <a href="#beranda" className="flex items-center gap-2 font-serif font-bold">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                <Leaf className="size-5" aria-hidden="true" />
-              </span>
               <span>
                 Dusun <span className="text-primary">Sukomangun</span>
               </span>
