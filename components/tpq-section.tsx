@@ -33,7 +33,6 @@ const PENGAJAR = [
   'Pak Paino',
   'Pak Mari',
   'Pak Trimo',
-  'Indah',
 ]
 
 const RINGKASAN = [
@@ -56,7 +55,7 @@ const RINGKASAN = [
 
 export function TpqSection() {
   return (
-    <Section id="tpq">
+    <Section id="tpq" tone="soft">
       <SectionHeader
         eyebrow="TPQ Darul Huda"
         title="Tempat tumbuhnya generasi penerus"

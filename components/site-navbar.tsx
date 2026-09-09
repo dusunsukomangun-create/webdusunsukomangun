@@ -12,10 +12,8 @@ const NAV_LINKS = [
   { href: '#peta', label: 'Peta' },
   { href: '#penduduk', label: 'Penduduk' },
   { href: '#tradisi', label: 'Tradisi' },
-  { href: '#masjid', label: 'Masjid' },
   { href: '#tpq', label: 'TPQ' },
   { href: '#kesenian', label: 'Kesenian' },
-  { href: '#posyandu', label: 'Posyandu' },
 ]
 
 export function SiteNavbar() {

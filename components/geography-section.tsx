@@ -1,10 +1,11 @@
-import { ArrowLeft, ArrowRight, ArrowUp, Home, Info } from 'lucide-react'
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Home, Info } from 'lucide-react'
 import { Section, SectionHeader } from '@/components/section'
 
 const BORDERS = {
   utara: { label: 'Utara', place: 'Dusun Gopaan', note: 'Batas sisi utara dusun', Icon: ArrowUp },
   barat: { label: 'Barat', place: 'Dusun Dobrasan', note: 'Batas sisi barat dusun', Icon: ArrowLeft },
   timur: { label: 'Timur', place: 'Genito', note: 'Pusat desa', Icon: ArrowRight },
+  selatan: { label: 'Selatan', place: 'Gunung Giyanti', note: 'Lanskap pegunungan', Icon: ArrowDown },
 }
 
 function BorderCard({
@@ -44,7 +45,7 @@ export function GeographySection() {
           <SectionHeader
             eyebrow="Geografi & Batas Wilayah"
             title="Dikelilingi bukit dan perkebunan"
-            description="Dusun Sukomangun berbatasan dengan tiga dusun, dengan permukiman warga berada tepat di tengahnya."
+            description="Dusun Sukomangun berbatasan dengan tiga dusun dan satu bukit, dengan permukiman warga berada tepat di tengahnya."
           />
           <div className="flex items-start gap-3 rounded-2xl border border-border bg-card p-4 text-sm leading-relaxed text-muted-foreground">
             <Info className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
@@ -57,9 +58,9 @@ export function GeographySection() {
 
         <div className="lg:w-3/5">
           <div
-            className="grid grid-cols-3 grid-rows-2 gap-3 sm:gap-4"
+            className="grid grid-cols-3 grid-rows-3 gap-3 sm:gap-4"
             role="img"
-            aria-label="Peta batas wilayah: Utara Dusun Gopaan, Barat Dusun Dobrasan, Timur Genito"
+            aria-label="Peta batas wilayah: Utara Dusun Gopaan, Barat Dusun Dobrasan, Timur Genito, Selatan Gunung Giyanti"
           >
             <div className="col-start-2 row-start-1">
               <BorderCard {...BORDERS.utara} />
@@ -78,6 +79,9 @@ export function GeographySection() {
             </div>
             <div className="col-start-3 row-start-2">
               <BorderCard {...BORDERS.timur} />
+            </div>
+            <div className="col-start-2 row-start-3">
+              <BorderCard {...BORDERS.selatan} />
             </div>
           </div>
         </div>
