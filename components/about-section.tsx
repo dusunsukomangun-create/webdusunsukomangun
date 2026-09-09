@@ -8,12 +8,12 @@ import { Section, SectionHeader } from '@/components/section'
 const FOTO_1 = {
   src: '/images/Gambar-5.jpeg',
   alt: 'Papan nama Nahdlatul Ulama bertuliskan Dsn. Sukomangun, Genito, Windusari, Magelang',
-  caption: 'Papan nama dusun',
+  caption: '',
 }
 const FOTO_2 = {
   src: '/images/dusun-gang-permukiman.jpeg',
   alt: 'Gang permukiman Dusun Sukomangun dengan rumah-rumah berdinding bata dan anak-anak bermain',
-  caption: 'Permukiman warga',
+  caption: '',
 }
 // ────────────────────────────────────────────────────────────────────
 
@@ -69,7 +69,12 @@ export function AboutSection() {
           <Photo {...FOTO_2} sizes="(min-width: 1024px) 45vw, 100vw" />
         </div>
 
-        <div className="flex flex-col gap-4">
+        {/* Turun 138px di layar lebar supaya kartu pertama sejajar dengan
+            paragraf "Dusun Sukomangun menyimpan jejak sejarah...".
+            Rinciannya: pil eyebrow 24px + jarak 12px + judul dua baris
+            (2 x 45px) + jarak 12px. Sesuaikan angkanya bila judulnya
+            nanti diubah sehingga jumlah barisnya berbeda. */}
+        <div className="flex flex-col gap-4 lg:mt-[138px]">
           {HISTORY_CARDS.map(({ icon: Icon, title, body }) => (
             <article
               key={title}

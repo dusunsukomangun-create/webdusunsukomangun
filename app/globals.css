@@ -85,6 +85,14 @@
   h4 {
     @apply font-serif;
   }
+  /* Semua paragraf rata kanan-kiri. Pemenggalan kata otomatis dipakai
+     supaya tidak muncul celah putih melebar di kolom yang sempit.
+     Paragraf satu baris tidak terpengaruh, sebab perataan penuh hanya
+     berlaku pada baris yang bukan baris terakhir. */
+  p {
+    text-align: justify;
+    hyphens: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

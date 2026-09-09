@@ -1,35 +1,61 @@
 import { Drum, Music, Sparkles, Waves } from 'lucide-react'
-import { Photo } from '@/components/photo'
+import { type PhotoData } from '@/components/photo'
+import { PhotoSlider } from '@/components/photo-slider'
 import { Section, SectionHeader } from '@/components/section'
 
 // ── FOTO ────────────────────────────────────────────────────────────
 // Ganti '/placeholder.svg' dengan '/images/nama-foto.jpg'.
 // Petunjuk lengkap ada di components/photo.tsx
-const FOTO_1 = {
-  src: '/images/kesenian-almuntramuntru-grup.jpeg',
-  alt: 'Anggota grup rebana Al-Muntra Muntru berfoto bersama mengenakan seragam batik dengan alat musiknya',
-  caption: 'Grup rebana Al-Muntra Muntru',
-}
-const FOTO_2 = {
-  src: '/images/kesenian-almuntramuntru-tampil.jpeg',
-  alt: 'Grup Al-Muntra Muntru tampil membawakan lagu dengan rebana, gendang, dan angklung',
-  caption: 'Perpaduan gendang dan angklung',
-}
-const FOTO_3 = {
-  src: '/images/kesenian-jatilan-pentas-1.jpeg',
-  alt: 'Para penari berkostum dan bertopeng tampil di atas panggung bersama penabuh gamelan',
-  caption: 'Pementasan tari dusun',
-}
-// ────────────────────────────────────────────────────────────────────
+// Tiap kelompok tampil sebagai galeri yang bisa digeser ke kanan dan kiri.
+// Untuk menambah foto, salin satu blok { ... } lalu ganti src dan alt-nya.
+// Kalau isinya hanya satu foto, tombol geser otomatis tidak muncul.
+const FOTO_ALMONTRAMONTRO: PhotoData[] = [
+  {
+    src: '/images/kesenian-almontramontro-grup.jpeg',
+    alt: 'Anggota grup rebana Al Montra Montro berfoto bersama mengenakan seragam batik dengan alat musiknya',
+    caption: '',
+  },
+  {
+    src: '/images/kesenian-rebana-latihan.jpeg',
+    alt: 'Para pemain rebana berlatih bersama di ruang tamu rumah warga',
+    caption: '',
+  },
+   {
+    src: '/images/mas-madhon.jpeg',
+    alt: 'Para pemain rebana berlatih bersama di ruang tamu rumah warga',
+    caption: '',
+  },
+  // Salin blok di atas untuk menambah foto berikutnya.
+]
+
+const FOTO_TELOGOSUTO: PhotoData[] = [
+  {
+    src: '/images/kesenian-jatilan-pentas-1.jpeg',
+    alt: 'Para penari berkostum dan bertopeng membawakan Telogo Suto di atas panggung bersama penabuh gamelan',
+    caption: '',
+  },
+  {
+    src: '/images/topeng.jpeg',
+    alt: 'Penari Telogo Suto berbaris di atas panggung mengenakan kostum dan hiasan kepala lengkap',
+    caption: '',
+  },
+  {
+    src: '/images/kesenian-jatilan-kostum-1.jpeg',
+    alt: 'Kendang, bedug, angklung, dan gamelan milik kelompok kesenian dusun yang tersimpan rapi',
+    caption: '',
+  },
+  // Salin blok di atas untuk menambah foto berikutnya.
+]
+// ─────────────────────────────────────────────────────────────────
 
 const ARTS = [
   {
     Icon: Drum,
     DetailIcon: Music,
     tag: 'Musik religi',
-    title: 'Al-Muntra Muntru',
-    body: 'Grup rebana dusun yang awalnya bernama Al-Kejawen. Namanya diganti oleh seorang Gus lewat ungkapan “wong-wongane iku mantra-mantru”, lalu Mbah Madhon menetapkannya menjadi Al-Muntra Muntru — nama yang bertahan hingga saat ini.',
-    detailTitle: 'Keunikannya',
+    title: 'Al Montra Montro',
+    body: 'Grup rebana dusun yang awalnya bernama Al-Kejawen. Namanya diganti oleh seorang Gus lewat ungkapan “wong-wongane iku mantra-mantru”, lalu Mbah Madhon menetapkannya menjadi Al Montra Montro — nama yang bertahan hingga saat ini.',
+    detailTitle: 'Keunikan',
     detail: (
       <>
         Grup ini memadukan musik Arab, Jawa, dan Indonesia, dengan kombinasi alat musik
@@ -44,9 +70,9 @@ const ARTS = [
     Icon: Sparkles,
     DetailIcon: Waves,
     tag: 'Kesenian khas',
-    title: 'Telaga Suta',
+    title: 'Telogo Suto',
     body: 'Modernisasi tarian Jawa yang menggabungkan Panji Kutan, Warok, dan Tari Topeng atau Cakar Lele menjadi satu kesatuan pertunjukan yang telah bercampur dengan unsur-unsur modern.',
-    detailTitle: 'Arti namanya',
+    detailTitle: 'Arti Nama',
     detail: (
       <>
         Namanya berakar dari kondisi geografis dusun yang dikelilingi sungai-sungai yang
@@ -64,14 +90,21 @@ export function ArtsSection() {
       <SectionHeader
         eyebrow="Kesenian"
         title="Denyut budaya yang terus dijaga"
-        description="Dari rebana yang memadukan musik Arab, Jawa, dan Indonesia hingga tarian hasil modernisasi — kesenian adalah jantung Sukomangun."
+        description="Dari rebana yang memadukan musik Arab, Jawa, dan Indonesia hingga tari tradisional yang dimodernisasi, kesenian menjadi jantung Sukomangun."
         align="center"
       />
 
-      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <Photo {...FOTO_1} sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
-        <Photo {...FOTO_2} sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
-        <Photo {...FOTO_3} sizes="(min-width: 1024px) 31vw, (min-width: 640px) 48vw, 100vw" />
+      <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <PhotoSlider
+          photos={FOTO_ALMONTRAMONTRO}
+          label="Foto Al Montra Montro"
+          sizes="(min-width: 1024px) 46vw, 100vw"
+        />
+        <PhotoSlider
+          photos={FOTO_TELOGOSUTO}
+          label="Foto Telogo Suto"
+          sizes="(min-width: 1024px) 46vw, 100vw"
+        />
       </div>
 
       <div className="mt-6 grid gap-6 lg:grid-cols-2">
@@ -93,7 +126,7 @@ export function ArtsSection() {
               <h3 className="text-balance text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
                 {title}
               </h3>
-              <p className="text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
                 {body}
               </p>
             </div>

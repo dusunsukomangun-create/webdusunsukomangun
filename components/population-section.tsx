@@ -8,7 +8,7 @@ import { Section, SectionHeader } from '@/components/section'
 const FOTO_3 = {
   src: '/images/umkm-keranjang-tembakau-panggul.jpeg',
   alt: 'Tiga warga memanggul keranjang bambu besar untuk tembakau di jalan Dusun Sukomangun',
-  caption: 'Keranjang tembakau, penopang ekonomi warga',
+  caption: '',
 }
 // ────────────────────────────────────────────────────────────────────
 

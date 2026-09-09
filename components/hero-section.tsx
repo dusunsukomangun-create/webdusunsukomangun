@@ -1,4 +1,4 @@
-import { ArrowDown, Drum, HandHeart, MapPin, Mountain, ShoppingBasket, Sprout, Wheat } from 'lucide-react'
+import { ArrowDown, Handshake, MapPin, Moon, Mountain, Music, ShoppingBasket, Sprout, Wheat } from 'lucide-react'
 import { HeroGallery } from '@/components/hero-gallery'
 import { Photo } from '@/components/photo'
 
@@ -14,32 +14,32 @@ const FOTO_UTAMA = {
 const POTENSI = [
   {
     Icon: Wheat,
-    title: 'Pertanian & Perkebunan',
+    title: 'Pertanian',
     body: 'Perbukitan dimanfaatkan sebagai lahan bersistem terasering, dengan tembakau, cabai, jagung, singkong, dan padi sebagai komoditas utama.',
   },
   {
-    Icon: Drum,
-    title: 'Kesenian & Tradisi Budaya',
-    body: 'Jathilan, Telaga Suta, Al-Muntra Muntru, dan Tari Topeng terus diwariskan antar-generasi sebagai aset budaya khas dusun.',
+    Icon: Music,
+    title: 'Kesenian',
+    body: 'Jathilan, Telogo Suto, Al Montra Montro, dan Tari Topeng terus diwariskan antar-generasi sebagai aset budaya khas dusun.',
   },
   {
-    Icon: Sprout,
+    Icon: Moon,
     title: 'Tradisi Keagamaan',
-    body: 'Kehidupan keagamaan terjaga lewat pengajian, Diba’an, Mujahadahan, dan Yasinan yang berjalan rutin.',
+    body: 'Tradisi keagamaan terjaga lewat pengajian, Diba’an, Mujahadahan, dan Yasinan yang berjalan rutin.',
   },
   {
-    Icon: HandHeart,
+    Icon: Handshake,
     title: 'Gotong Royong',
-    body: 'Semangat guyub rukun warga sangat kuat, baik dalam kegiatan kemasyarakatan maupun pembangunan dusun.',
+    body: 'Semangat guyub rukun warga sangat kuat dalam kegiatan kemasyarakatan.',
   },
   {
     Icon: ShoppingBasket,
     title: 'UMKM',
-    body: 'Beragam usaha mikro berjalan, dari produsen dan kulakan singkong, warung kelontong, hingga penjual keranjang tembakau.',
+    body: 'Beragam usaha mikro berjalan, dari produsen dan distributor singkong, warung kelontong, hingga penjual keranjang tembakau.',
   },
   {
     Icon: Mountain,
-    title: 'Lanskap Perbukitan',
+    title: 'Perbukitan',
     body: 'Dusun dikelilingi bukit dan perkebunan, dengan permukiman warga berada tepat di tengahnya.',
   },
 ]
@@ -66,8 +66,8 @@ export function HeroSection() {
           </p>
 
           <p className="max-w-lg text-pretty text-base leading-relaxed text-muted-foreground">
-            Sebuah dusun di kawasan pegunungan yang menyimpan jejak sejarah panjang sejak
-            zaman kolonial Belanda, dan terus tumbuh sambil menjaga tradisi leluhurnya.
+            Sebuah dusun di kawasan pegunungan yang menyimpan jejak sejarah sejak zaman
+            kolonial Belanda, dan terus tumbuh dengan menjaga tradisi leluhur.
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -109,15 +109,6 @@ export function HeroSection() {
             sizes="(min-width: 1024px) 50vw, 100vw"
             priority
           />
-          <div className="absolute -bottom-5 left-4 right-4 flex items-center gap-4 rounded-2xl border border-border bg-card/95 p-4 shadow-lg backdrop-blur sm:left-6 sm:right-auto sm:max-w-xs">
-            <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
-              <Sprout className="size-5" aria-hidden="true" />
-            </div>
-            <div className="flex flex-col">
-              <span className="text-xs font-medium text-muted-foreground">Dari 22 rumah</span>
-              <span className="font-serif text-base font-bold">Kini sekitar 70 rumah</span>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -128,11 +119,11 @@ export function HeroSection() {
             Potensi Dusun
           </span>
           <h2 className="text-balance text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
-            Kekayaan yang dimiliki Sukomangun
+            Kekayaan Sukomangun
           </h2>
           <p className="max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Dari ladang terasering dan kesenian warisan hingga gotong royong dan usaha
-            mikro warga.
+            Ladang yang subur, kesenian yang diwariskan, gotong royong yang mengakar, dan
+            usaha warga yang terus berjalan.
           </p>
         </div>
 

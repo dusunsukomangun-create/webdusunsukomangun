@@ -1,4 +1,16 @@
-import { MapPin } from 'lucide-react'
+import { MapPin, MessageCircle } from 'lucide-react'
+
+// ── KONTAK ──────────────────────────────────────────────────────────
+// Nomor ditulis dua kali dengan sengaja:
+//   WA_NOMOR  -> hanya angka, dipakai untuk tautan wa.me
+//   WA_TAMPIL -> berspasi, yang dibaca pengunjung
+const KONTAK = {
+  nama: 'Pak Dwi',
+  jabatan: 'Kepala Dusun',
+  waNomor: '6281770889686',
+  waTampil: '+62 817 7088 9686',
+}
+// ────────────────────────────────────────────────────────────────────
 
 const FOOTER_LINKS = [
   { href: '#potensi', label: 'Potensi' },
@@ -46,6 +58,27 @@ export function SiteFooter() {
               ))}
             </ul>
           </nav>
+        </div>
+
+        <div className="flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-1">
+            <span className="text-sm font-semibold text-foreground">
+              Hubungi {KONTAK.jabatan}
+            </span>
+            <span className="text-sm text-muted-foreground">
+              {KONTAK.nama} &middot; {KONTAK.waTampil}
+            </span>
+          </div>
+
+          <a
+            href={`https://wa.me/${KONTAK.waNomor}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex h-11 w-fit items-center gap-2 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/25 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+          >
+            <MessageCircle className="size-4" aria-hidden="true" />
+            Chat WhatsApp {KONTAK.nama}
+          </a>
         </div>
 
         <div className="flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">

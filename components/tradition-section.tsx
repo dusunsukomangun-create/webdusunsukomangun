@@ -15,17 +15,17 @@ const FOTO_1: PhotoData[] = [
   {
     src: '/images/Gambar-1.jpeg',
     alt: 'Warga duduk bersila di dalam rumah membaca kitab bersama dalam pengajian rutin',
-    caption: 'Pengajian rutin warga',
+    caption: '',
   },
   {
     src: '/images/tradisi-ibu-mengaji-serambi.jpeg',
     alt: 'Ibu-ibu dan anak-anak mengaji bersama di serambi masjid',
-    caption: 'Mengaji di serambi masjid',
+    caption: '',
   },
   {
     src: '/images/tradisi-mujahadah-ibu.jpeg',
     alt: 'Majelis ibu-ibu berdiri membaca bersama pada malam hari',
-    caption: 'Majelis wanita malam Kamis',
+    caption: '',
   },
 ]
 
@@ -33,17 +33,17 @@ const FOTO_2: PhotoData[] = [
   {
     src: '/images/tradisi-kenduri-ladang.jpeg',
     alt: 'Warga duduk melingkar menyantap hidangan beralas daun pisang di tepi ladang',
-    caption: 'Kenduri bersama di tepi ladang',
+    caption: '',
   },
   {
     src: '/images/tradisi-kumpul-malam.jpeg',
     alt: 'Warga berkumpul mengelilingi perapian kecil di jalan dusun pada malam hari',
-    caption: 'Kumpul malam warga',
+    caption: '',
   },
   {
     src: '/images/gotong-royong-pembangunan.jpeg',
     alt: 'Warga bahu-membahu mengerjakan pembangunan bangunan dusun',
-    caption: 'Gotong royong pembangunan',
+    caption: '',
   },
 ]
 

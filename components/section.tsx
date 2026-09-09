@@ -46,7 +46,12 @@ export function SectionHeader({ eyebrow, title, description, align = 'left' }: S
         {title}
       </h2>
       {description && (
-        <p className="text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <p
+          className={cn(
+            'text-base leading-relaxed text-muted-foreground sm:text-lg',
+            align === 'center' && 'text-center',
+          )}
+        >
           {description}
         </p>
       )}

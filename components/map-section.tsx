@@ -35,8 +35,8 @@ export function MapSection() {
     <Section id="peta" tone="soft">
       <SectionHeader
         eyebrow="Lokasi & Peta"
-        title="Menemukan Sukomangun"
-        description="Permukiman warga berada tepat di tengah dusun, dikelilingi bukit dan lahan perkebunan di sekitarnya."
+        title="Lokasi Sukomangun"
+        description="Rumah-rumah warga berkumpul di tengah dusun, dengan bukit dan ladang yang mengelilinginya."
       />
 
       <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.5fr] lg:items-start">

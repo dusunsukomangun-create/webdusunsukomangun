@@ -2,21 +2,19 @@ import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Home, Info } from 'lucide-re
 import { Section, SectionHeader } from '@/components/section'
 
 const BORDERS = {
-  utara: { label: 'Utara', place: 'Dusun Gopaan', note: 'Batas sisi utara dusun', Icon: ArrowUp },
-  barat: { label: 'Barat', place: 'Dusun Dobrasan', note: 'Batas sisi barat dusun', Icon: ArrowLeft },
-  timur: { label: 'Timur', place: 'Genito', note: 'Pusat desa', Icon: ArrowRight },
-  selatan: { label: 'Selatan', place: 'Gunung Giyanti', note: 'Lanskap pegunungan', Icon: ArrowDown },
+  utara: { label: 'Utara', place: 'Dusun Gopaan', Icon: ArrowUp },
+  barat: { label: 'Barat', place: 'Dusun Dobrasan', Icon: ArrowLeft },
+  timur: { label: 'Timur', place: 'Genito', Icon: ArrowRight },
+  selatan: { label: 'Selatan', place: 'Gunung Giyanti', Icon: ArrowDown },
 }
 
 function BorderCard({
   label,
   place,
-  note,
   Icon,
 }: {
   label: string
   place: string
-  note: string
   Icon: typeof ArrowUp
 }) {
   return (
@@ -31,7 +29,6 @@ function BorderCard({
       </div>
       <div>
         <p className="font-serif text-base font-bold sm:text-lg">{place}</p>
-        <p className="text-xs text-muted-foreground sm:text-sm">{note}</p>
       </div>
     </div>
   )
@@ -50,8 +47,8 @@ export function GeographySection() {
           <div className="flex items-start gap-3 rounded-2xl border border-border bg-card p-4 text-sm leading-relaxed text-muted-foreground">
             <Info className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
             <p>
-              Kondisi geografis inilah yang membentuk mata pencaharian warga, yang
-              mayoritas bekerja sebagai petani.
+              Bentang alam seperti inilah yang membuat sebagian besar warga hidup dari
+              bertani.
             </p>
           </div>
         </div>

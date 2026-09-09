@@ -13,7 +13,12 @@ const FOTO_1 = {
 const FOTO_2 = {
   src: '/images/tpq-kelas-lebar.jpeg',
   alt: 'Suasana kelas TPQ Darul Huda, pengajar menulis huruf Arab di papan tulis sementara santri mencatat',
-  caption: 'Belajar kitab bersama',
+  caption: '',
+}
+const FOTO_3 = {
+  src: '/images/tpq-anak-mengaji-malam.jpeg',
+  alt: 'Santri putri TPQ Darul Huda membaca dan mencatat pelajaran dari kitab di atas meja kayu',
+  caption: '',
 }
 // ────────────────────────────────────────────────────────────────────
 
@@ -59,7 +64,9 @@ export function TpqSection() {
       <SectionHeader
         eyebrow="TPQ Darul Huda"
         title="Tempat tumbuhnya generasi penerus"
-        description="Setiap hari, kecuali malam Jumat, suara lantunan Al-Qur’an mengalun dari TPA Darul Huda."
+        description="Lebih dari sekadar tempat menimba ilmu, TPA Darul Huda menjadi tempat
+              tumbuhnya harapan agar lahir generasi penerus yang kelak meramaikan masjid
+              dan menjaga denyut kehidupan keagamaan dusun."
       />
 
       <div className="mt-10 grid gap-6 lg:grid-cols-[1.3fr_1fr] lg:items-start">
@@ -102,27 +109,26 @@ export function TpqSection() {
         <div className="flex flex-col gap-6">
           <Photo {...FOTO_1} sizes="(min-width: 1024px) 38vw, 100vw" />
           <Photo {...FOTO_2} sizes="(min-width: 1024px) 38vw, 100vw" />
-
-          <article className="flex flex-col gap-4 rounded-2xl bg-primary p-6 text-primary-foreground shadow-lg shadow-primary/25">
-            <h3 className="text-lg font-bold">Materi yang Diajarkan</h3>
-            <ul className="flex flex-col gap-2">
-              {MATERI.map((item) => (
-                <li key={item} className="flex items-center gap-2.5 text-sm">
-                  <span
-                    className="size-1.5 shrink-0 rounded-full bg-primary-foreground"
-                    aria-hidden="true"
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <p className="text-pretty text-sm leading-relaxed opacity-85">
-              Lebih dari sekadar tempat menimba ilmu, TPA Darul Huda menjadi tempat
-              tumbuhnya harapan agar lahir generasi penerus yang kelak meramaikan masjid
-              dan menjaga denyut kehidupan keagamaan dusun.
-            </p>
-          </article>
         </div>
+      </div>
+
+      <div className="mt-6 grid gap-6 lg:grid-cols-2 lg:items-start">
+        <Photo {...FOTO_3} className="aspect-[16/10]" sizes="(min-width: 1024px) 46vw, 100vw" />
+
+        <article className="flex flex-col gap-4 rounded-2xl bg-primary p-6 text-primary-foreground shadow-lg shadow-primary/25 sm:p-7">
+          <h3 className="text-lg font-bold">Materi yang Diajarkan</h3>
+          <ul className="flex flex-col gap-2">
+            {MATERI.map((item) => (
+              <li key={item} className="flex items-center gap-2.5 text-sm">
+                <span
+                  className="size-1.5 shrink-0 rounded-full bg-primary-foreground"
+                  aria-hidden="true"
+                />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </article>
       </div>
     </Section>
   )
