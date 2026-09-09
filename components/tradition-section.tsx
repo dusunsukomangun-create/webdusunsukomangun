@@ -1,5 +1,5 @@
 import { CalendarDays, HandHeart, Moon, Users } from 'lucide-react'
-import { PLACEHOLDER, type PhotoData } from '@/components/photo'
+import { type PhotoData } from '@/components/photo'
 import { PhotoSlider } from '@/components/photo-slider'
 import { Section, SectionHeader } from '@/components/section'
 
@@ -13,20 +13,38 @@ import { Section, SectionHeader } from '@/components/section'
 // ────────────────────────────────────────────────────────────────────
 const FOTO_1: PhotoData[] = [
   {
-    src: PLACEHOLDER,
-    alt: 'Warga berkumpul mengikuti pengajian dan pembacaan Diba’an',
-    caption: 'Pengajian dan Diba’an warga',
+    src: '/images/Gambar-1.jpeg',
+    alt: 'Warga duduk bersila di dalam rumah membaca kitab bersama dalam pengajian rutin',
+    caption: 'Pengajian rutin warga',
   },
-  // Salin blok di atas untuk menambah foto berikutnya.
+  {
+    src: '/images/tradisi-ibu-mengaji-serambi.jpeg',
+    alt: 'Ibu-ibu dan anak-anak mengaji bersama di serambi masjid',
+    caption: 'Mengaji di serambi masjid',
+  },
+  {
+    src: '/images/tradisi-mujahadah-ibu.jpeg',
+    alt: 'Majelis ibu-ibu berdiri membaca bersama pada malam hari',
+    caption: 'Majelis wanita malam Kamis',
+  },
 ]
 
 const FOTO_2: PhotoData[] = [
   {
-    src: PLACEHOLDER,
-    alt: 'Majelis Mujahadah yang digelar bergiliran di kediaman warga',
-    caption: 'Mujahadah bergilir di rumah warga',
+    src: '/images/tradisi-kenduri-ladang.jpeg',
+    alt: 'Warga duduk melingkar menyantap hidangan beralas daun pisang di tepi ladang',
+    caption: 'Kenduri bersama di tepi ladang',
   },
-  // Salin blok di atas untuk menambah foto berikutnya.
+  {
+    src: '/images/tradisi-kumpul-malam.jpeg',
+    alt: 'Warga berkumpul mengelilingi perapian kecil di jalan dusun pada malam hari',
+    caption: 'Kumpul malam warga',
+  },
+  {
+    src: '/images/gotong-royong-pembangunan.jpeg',
+    alt: 'Warga bahu-membahu mengerjakan pembangunan bangunan dusun',
+    caption: 'Gotong royong pembangunan',
+  },
 ]
 
 const TRADISI = [

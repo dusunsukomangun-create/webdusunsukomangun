@@ -6,19 +6,19 @@ import { Section, SectionHeader } from '@/components/section'
 // Ganti '/placeholder.svg' dengan '/images/nama-foto.jpg'.
 // Petunjuk lengkap ada di components/photo.tsx
 const FOTO_1 = {
-  src: '/placeholder.svg',
-  alt: 'Grup rebana Al-Muntra Muntru Dusun Sukomangun sedang tampil',
+  src: '/images/kesenian-almuntramuntru-grup.jpeg',
+  alt: 'Anggota grup rebana Al-Muntra Muntru berfoto bersama mengenakan seragam batik dengan alat musiknya',
   caption: 'Grup rebana Al-Muntra Muntru',
 }
 const FOTO_2 = {
-  src: '/placeholder.svg',
-  alt: 'Pementasan Al-Muntra Muntru dengan gendang dan angklung',
+  src: '/images/kesenian-almuntramuntru-tampil.jpeg',
+  alt: 'Grup Al-Muntra Muntru tampil membawakan lagu dengan rebana, gendang, dan angklung',
   caption: 'Perpaduan gendang dan angklung',
 }
 const FOTO_3 = {
-  src: '/placeholder.svg',
-  alt: 'Pertunjukan tari Telaga Suta di Dusun Sukomangun',
-  caption: 'Pertunjukan Telaga Suta',
+  src: '/images/kesenian-jatilan-pentas-1.jpeg',
+  alt: 'Para penari berkostum dan bertopeng tampil di atas panggung bersama penabuh gamelan',
+  caption: 'Pementasan tari dusun',
 }
 // ────────────────────────────────────────────────────────────────────
 

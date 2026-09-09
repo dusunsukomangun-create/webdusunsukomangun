@@ -6,14 +6,14 @@ import { Section, SectionHeader } from '@/components/section'
 // Ganti '/placeholder.svg' dengan '/images/nama-foto.jpg'.
 // Petunjuk lengkap ada di components/photo.tsx
 const FOTO_1 = {
-  src: '/placeholder.svg',
-  alt: 'Suasana Dusun Sukomangun di kawasan pegunungan',
-  caption: 'Dusun di kawasan pegunungan',
+  src: '/images/Gambar-5.jpeg',
+  alt: 'Papan nama Nahdlatul Ulama bertuliskan Dsn. Sukomangun, Genito, Windusari, Magelang',
+  caption: 'Papan nama dusun',
 }
 const FOTO_2 = {
-  src: '/placeholder.svg',
-  alt: 'Permukiman warga Dusun Sukomangun yang dikelilingi bukit dan perkebunan',
-  caption: 'Permukiman di tengah perbukitan',
+  src: '/images/dusun-gang-permukiman.jpeg',
+  alt: 'Gang permukiman Dusun Sukomangun dengan rumah-rumah berdinding bata dan anak-anak bermain',
+  caption: 'Permukiman warga',
 }
 // ────────────────────────────────────────────────────────────────────
 

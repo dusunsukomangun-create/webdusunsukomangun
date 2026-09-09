@@ -6,13 +6,13 @@ import { Section, SectionHeader } from '@/components/section'
 // Ganti '/placeholder.svg' dengan '/images/nama-foto.jpg'.
 // Petunjuk lengkap ada di components/photo.tsx
 const FOTO_1 = {
-  src: '/placeholder.svg',
-  alt: 'Anak-anak mengaji bersama di TPA Darul Huda Dusun Sukomangun',
-  caption: 'Anak-anak mengaji di Darul Huda',
+  src: '/images/tpq-gedung-darul-huda.jpeg',
+  alt: 'Gedung TPQ Darul Huda Dusun Sukomangun dengan papan nama Nahdlatul Ulama di depannya',
+  caption: 'Gedung TPQ Darul Huda',
 }
 const FOTO_2 = {
-  src: '/placeholder.svg',
-  alt: 'Kegiatan belajar kitab di TPA Darul Huda',
+  src: '/images/tpq-kelas-lebar.jpeg',
+  alt: 'Suasana kelas TPQ Darul Huda, pengajar menulis huruf Arab di papan tulis sementara santri mencatat',
   caption: 'Belajar kitab bersama',
 }
 // ────────────────────────────────────────────────────────────────────

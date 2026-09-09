@@ -6,9 +6,9 @@ import { Section, SectionHeader } from '@/components/section'
 // Ganti '/placeholder.svg' dengan '/images/nama-foto.jpg'.
 // Petunjuk lengkap ada di components/photo.tsx
 const FOTO_3 = {
-  src: '/placeholder.svg',
-  alt: 'Rumah-rumah warga Dusun Sukomangun beserta jalan dusun yang telah diperbaiki',
-  caption: 'Rumah warga dan infrastruktur dusun',
+  src: '/images/umkm-keranjang-tembakau-panggul.jpeg',
+  alt: 'Tiga warga memanggul keranjang bambu besar untuk tembakau di jalan Dusun Sukomangun',
+  caption: 'Keranjang tembakau, penopang ekonomi warga',
 }
 // ────────────────────────────────────────────────────────────────────
 

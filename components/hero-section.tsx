@@ -6,8 +6,8 @@ import { Photo } from '@/components/photo'
 // Ganti '/placeholder.svg' dengan '/images/nama-foto.jpg'.
 // Petunjuk lengkap ada di components/photo.tsx
 const FOTO_UTAMA = {
-  src: '/placeholder.svg',
-  alt: 'Pemandangan Dusun Sukomangun dengan perbukitan dan permukiman warga',
+  src: '/images/Gambar-4.jpeg',
+  alt: 'Lanskap perbukitan berundak Dusun Sukomangun dengan jalan beraspal yang membelah ladang',
 }
 // ────────────────────────────────────────────────────────────────────
 

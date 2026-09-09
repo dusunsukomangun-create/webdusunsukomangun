@@ -6,8 +6,8 @@ import { Section, SectionHeader } from '@/components/section'
 // Ganti '/placeholder.svg' dengan '/images/nama-foto.jpg'.
 // Petunjuk lengkap ada di components/photo.tsx
 const FOTO_MASJID = {
-  src: '/placeholder.svg',
-  alt: 'Bangunan Masjid Dusun Sukomangun',
+  src: '/images/masjid-interior.jpeg',
+  alt: 'Bagian dalam Masjid Dusun Sukomangun dengan mihrab, mimbar kayu ukir, dan karpet hijau',
   caption: 'Masjid Dusun Sukomangun',
 }
 const FOTO_POSYANDU = {

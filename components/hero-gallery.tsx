@@ -8,12 +8,12 @@ import { PhotoSlider } from '@/components/photo-slider'
 const SLIDES: PhotoData[] = [
   {
     src: '/images/Gambar-5.jpeg',
-    alt: 'Papan nama Nahdlatul Ulama bertuliskan Dsn. Sukomangun, Genito, Windusari, Magelang, dengan rumah warga dan perbukitan di belakangnya',
-    caption: 'Papan Nama',
+    alt: 'Papan nama Nahdlatul Ulama bertuliskan Dsn. Sukomangun, Genito, Windusari, Magelang',
+    caption: 'Papan nama dusun',
   },
   {
     src: '/images/Gambar-4.jpeg',
-    alt: 'Lanskap perbukitan hijau dengan ladang berundak dan jalan beraspal yang membelah dusun',
+    alt: 'Lanskap perbukitan berundak dengan jalan beraspal yang membelah ladang',
     caption: 'Perbukitan dan jalan dusun',
   },
   {
@@ -22,14 +22,34 @@ const SLIDES: PhotoData[] = [
     caption: 'Ladang sayur di tepi sungai',
   },
   {
+    src: '/images/dusun-jalan-utama.jpeg',
+    alt: 'Jalan utama Dusun Sukomangun dengan rumah warga di kanan dan kiri',
+    caption: 'Jalan utama dusun',
+  },
+  {
+    src: '/images/dusun-jemur-gabah.jpeg',
+    alt: 'Gabah dijemur di atas terpal di jalan dusun pada siang hari',
+    caption: 'Menjemur gabah di jalan dusun',
+  },
+  {
+    src: '/images/umkm-warung-kelontong.jpeg',
+    alt: 'Warung kelontong milik warga dengan aneka barang dagangan',
+    caption: 'Warung kelontong warga',
+  },
+  {
+    src: '/images/umkm-gudang-keranjang-tembakau.jpeg',
+    alt: 'Gudang bambu berisi tumpukan keranjang tembakau siap didistribusikan',
+    caption: 'Gudang keranjang tembakau',
+  },
+  {
+    src: '/images/umkm-pengolahan-singkong.jpeg',
+    alt: 'Warga menyortir dan mengemas singkong ke dalam krat untuk didistribusikan',
+    caption: 'Pengolahan singkong warga',
+  },
+  {
     src: '/images/Gambar-2.jpeg',
     alt: 'Sekelompok pemuda duduk mengelilingi api unggun di jalan dusun pada malam hari',
     caption: 'Kumpul malam pemuda dusun',
-  },
-  {
-    src: '/images/Gambar-1.jpeg',
-    alt: 'Warga berkumpul duduk bersila di dalam rumah sambil membaca kitab dalam pengajian rutin',
-    caption: 'Pengajian rutin warga',
   },
 ]
 
