@@ -58,23 +58,23 @@ const HISTORY_CARDS = [
 export function AboutSection() {
   return (
     <Section id="tentang">
-      <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
+      {/* Judul sengaja diletakkan di luar kisi dua kolom. Dengan begitu foto
+          dan kartu keterangan sama-sama mulai dari baris yang sama, tanpa
+          perlu diatur jaraknya secara manual — kesejajarannya tetap terjaga
+          meski panjang judul atau paragrafnya nanti berubah. */}
+      <SectionHeader
+        eyebrow="Tentang & Sejarah"
+        title="Dari semangat membangun, lahirlah sebuah nama"
+        description="Dusun Sukomangun menyimpan jejak sejarah panjang sejak zaman kolonial Belanda, dan sebuah nama yang menjadi pesan turun-temurun."
+      />
+
+      <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
         <div className="flex flex-col gap-6">
-          <SectionHeader
-            eyebrow="Tentang & Sejarah"
-            title="Dari semangat membangun, lahirlah sebuah nama"
-            description="Dusun Sukomangun menyimpan jejak sejarah panjang sejak zaman kolonial Belanda, dan sebuah nama yang menjadi pesan turun-temurun."
-          />
           <Photo {...FOTO_1} sizes="(min-width: 1024px) 45vw, 100vw" />
           <Photo {...FOTO_2} sizes="(min-width: 1024px) 45vw, 100vw" />
         </div>
 
-        {/* Turun 138px di layar lebar supaya kartu pertama sejajar dengan
-            paragraf "Dusun Sukomangun menyimpan jejak sejarah...".
-            Rinciannya: pil eyebrow 24px + jarak 12px + judul dua baris
-            (2 x 45px) + jarak 12px. Sesuaikan angkanya bila judulnya
-            nanti diubah sehingga jumlah barisnya berbeda. */}
-        <div className="flex flex-col gap-4 lg:mt-[138px]">
+        <div className="flex flex-col gap-4">
           {HISTORY_CARDS.map(({ icon: Icon, title, body }) => (
             <article
               key={title}
