@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Leaf, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const NAV_LINKS = [
@@ -9,12 +9,13 @@ const NAV_LINKS = [
   { href: '#galeri', label: 'Galeri' },
   { href: '#tentang', label: 'Tentang' },
   { href: '#geografi', label: 'Geografi' },
+  { href: '#peta', label: 'Peta' },
   { href: '#penduduk', label: 'Penduduk' },
+  { href: '#tradisi', label: 'Tradisi' },
+  { href: '#masjid', label: 'Masjid' },
+  { href: '#tpq', label: 'TPQ' },
   { href: '#kesenian', label: 'Kesenian' },
-  { href: '#kegiatan', label: 'Kegiatan' },
-  { href: '#fasilitas', label: 'Fasilitas' },
-  { href: '#tokoh', label: 'Tokoh' },
-  { href: '#harapan', label: 'Harapan' },
+  { href: '#posyandu', label: 'Posyandu' },
 ]
 
 export function SiteNavbar() {
@@ -52,7 +53,7 @@ export function SiteNavbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-secondary-foreground xl:px-3"
+                className="whitespace-nowrap rounded-full px-2.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-secondary-foreground"
               >
                 {link.label}
               </a>

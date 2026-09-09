@@ -1,11 +1,10 @@
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, Home, Info } from 'lucide-react'
+import { ArrowLeft, ArrowRight, ArrowUp, Home, Info } from 'lucide-react'
 import { Section, SectionHeader } from '@/components/section'
 
 const BORDERS = {
-  utara: { label: 'Utara', place: 'Dusun Ngupaan', note: 'Batas di pertigaan', Icon: ArrowUp },
-  barat: { label: 'Barat', place: 'Dusun Bahsan', note: 'Wilayah Sukup', Icon: ArrowLeft },
-  timur: { label: 'Timur', place: 'Genito', note: 'Batas di jembatan dekat makam', Icon: ArrowRight },
-  selatan: { label: 'Selatan', place: 'Gunung Giyanti', note: 'Lanskap pegunungan', Icon: ArrowDown },
+  utara: { label: 'Utara', place: 'Dusun Gopaan', note: 'Batas sisi utara dusun', Icon: ArrowUp },
+  barat: { label: 'Barat', place: 'Dusun Dobrasan', note: 'Batas sisi barat dusun', Icon: ArrowLeft },
+  timur: { label: 'Timur', place: 'Genito', note: 'Pusat desa', Icon: ArrowRight },
 }
 
 function BorderCard({
@@ -44,23 +43,23 @@ export function GeographySection() {
         <div className="flex flex-col gap-6 lg:w-2/5">
           <SectionHeader
             eyebrow="Geografi & Batas Wilayah"
-            title="Di tengah hamparan sawah, di kaki Gunung Giyanti"
-            description="Permukiman warga terpusat di bagian tengah dusun, sementara sisanya merupakan area persawahan yang membentang ke segala arah."
+            title="Dikelilingi bukit dan perkebunan"
+            description="Dusun Sukomangun berbatasan dengan tiga dusun, dengan permukiman warga berada tepat di tengahnya."
           />
           <div className="flex items-start gap-3 rounded-2xl border border-border bg-card p-4 text-sm leading-relaxed text-muted-foreground">
             <Info className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
             <p>
-              Jalan utama dusun telah diaspal dan menjadi bagian dari jalur wisata
-              Temanggung–Kaliangkrik.
+              Kondisi geografis inilah yang membentuk mata pencaharian warga, yang
+              mayoritas bekerja sebagai petani.
             </p>
           </div>
         </div>
 
         <div className="lg:w-3/5">
           <div
-            className="grid grid-cols-3 grid-rows-3 gap-3 sm:gap-4"
+            className="grid grid-cols-3 grid-rows-2 gap-3 sm:gap-4"
             role="img"
-            aria-label="Peta batas wilayah: Utara Dusun Ngupaan, Barat Dusun Bahsan, Timur Genito, Selatan Gunung Giyanti"
+            aria-label="Peta batas wilayah: Utara Dusun Gopaan, Barat Dusun Dobrasan, Timur Genito"
           >
             <div className="col-start-2 row-start-1">
               <BorderCard {...BORDERS.utara} />
@@ -74,14 +73,11 @@ export function GeographySection() {
                 Sukomangun
               </span>
               <span className="text-[11px] leading-tight opacity-80 sm:text-xs">
-                Permukiman di tengah
+                Permukiman warga
               </span>
             </div>
             <div className="col-start-3 row-start-2">
               <BorderCard {...BORDERS.timur} />
-            </div>
-            <div className="col-start-2 row-start-3">
-              <BorderCard {...BORDERS.selatan} />
             </div>
           </div>
         </div>

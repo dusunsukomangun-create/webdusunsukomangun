@@ -1,37 +1,46 @@
-import Image from 'next/image'
-import { ArrowDown, Beef, Drum, MapPin, Mountain, Route, Sprout, Users, Wheat } from 'lucide-react'
+import { ArrowDown, Drum, HandHeart, MapPin, Mountain, ShoppingBasket, Sprout, Wheat } from 'lucide-react'
 import { HeroGallery } from '@/components/hero-gallery'
+import { Photo } from '@/components/photo'
+
+// ── FOTO ────────────────────────────────────────────────────────────
+// Ganti '/placeholder.svg' dengan '/images/nama-foto.jpg'.
+// Petunjuk lengkap ada di components/photo.tsx
+const FOTO_UTAMA = {
+  src: '/placeholder.svg',
+  alt: 'Pemandangan Dusun Sukomangun dengan perbukitan dan permukiman warga',
+}
+// ────────────────────────────────────────────────────────────────────
 
 const POTENSI = [
   {
     Icon: Wheat,
-    title: 'Pertanian',
-    body: 'Hamparan sawah membentang ke segala arah dan menjadi tulang punggung ekonomi warga.',
-  },
-  {
-    Icon: Beef,
-    title: 'Peternakan',
-    body: 'Sebagian besar warga beternak kambing dan sapi sebagai penopang penghasilan.',
+    title: 'Pertanian & Perkebunan',
+    body: 'Perbukitan dimanfaatkan sebagai lahan bersistem terasering, dengan tembakau, cabai, jagung, singkong, dan padi sebagai komoditas utama.',
   },
   {
     Icon: Drum,
-    title: 'Kesenian',
-    body: 'Rebana Al-Muntramuntru, Telaga Suta, Kuntulan, hingga Jatilan & Topeng Ireng.',
+    title: 'Kesenian & Tradisi Budaya',
+    body: 'Jathilan, Telaga Suta, Al-Muntra Muntru, dan Tari Topeng terus diwariskan antar-generasi sebagai aset budaya khas dusun.',
   },
   {
-    Icon: Route,
-    title: 'Jalur Wisata',
-    body: 'Jalan utama beraspal yang menjadi bagian dari jalur wisata Temanggung–Kaliangkrik.',
+    Icon: Sprout,
+    title: 'Tradisi Keagamaan',
+    body: 'Kehidupan keagamaan terjaga lewat pengajian, Diba’an, Mujahadahan, dan Yasinan yang berjalan rutin.',
+  },
+  {
+    Icon: HandHeart,
+    title: 'Gotong Royong',
+    body: 'Semangat guyub rukun warga sangat kuat, baik dalam kegiatan kemasyarakatan maupun pembangunan dusun.',
+  },
+  {
+    Icon: ShoppingBasket,
+    title: 'UMKM',
+    body: 'Beragam usaha mikro berjalan, dari produsen dan kulakan singkong, warung kelontong, hingga penjual keranjang tembakau.',
   },
   {
     Icon: Mountain,
-    title: 'Lanskap Alam',
-    body: 'Panorama kaki Gunung Giyanti yang membentang di sisi selatan dusun.',
-  },
-  {
-    Icon: Users,
-    title: 'Generasi Muda',
-    body: 'Karang Taruna yang aktif menggerakkan kesenian dan kegiatan warga.',
+    title: 'Lanskap Perbukitan',
+    body: 'Dusun dikelilingi bukit dan perkebunan, dengan permukiman warga berada tepat di tengahnya.',
   },
 ]
 
@@ -45,7 +54,7 @@ export function HeroSection() {
         <div className="flex flex-col items-start gap-6 animate-in fade-in slide-in-from-bottom-4 duration-700">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground shadow-sm">
             <MapPin className="size-3.5 text-primary" aria-hidden="true" />
-            Desa Genito · Kec. Windusari · Kab. Magelang · Jawa Tengah
+            Desa Genito &middot; Kec. Windusari &middot; Kab. Magelang &middot; Jawa Tengah
           </span>
 
           <h1 className="text-balance text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
@@ -53,12 +62,12 @@ export function HeroSection() {
           </h1>
 
           <p className="text-pretty text-lg italic leading-relaxed text-foreground/80 sm:text-xl">
-            &ldquo;Suko Mangun &mdash; Semangat untuk membangun, tanpa menunda.&rdquo;
+            &ldquo;Suko Mangun &mdash; senang membangun, tanpa menunda.&rdquo;
           </p>
 
           <p className="max-w-lg text-pretty text-base leading-relaxed text-muted-foreground">
-            Sebuah dusun yang tumbuh dari sekitar dua puluh rumah menjadi komunitas
-            yang hidup, menjaga tradisi leluhur sambil terus melangkah maju.
+            Sebuah dusun di kawasan pegunungan yang menyimpan jejak sejarah panjang sejak
+            zaman kolonial Belanda, dan terus tumbuh sambil menjaga tradisi leluhurnya.
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -80,11 +89,11 @@ export function HeroSection() {
           <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">
             <li className="flex items-center gap-2">
               <Wheat className="size-4 text-primary" aria-hidden="true" />
-              Dikelilingi sawah
+              Pertanian terasering
             </li>
             <li className="flex items-center gap-2">
               <Mountain className="size-4 text-primary" aria-hidden="true" />
-              Kaki Gunung Giyanti
+              Dikelilingi perbukitan
             </li>
             <li className="flex items-center gap-2">
               <Sprout className="size-4 text-primary" aria-hidden="true" />
@@ -94,22 +103,18 @@ export function HeroSection() {
         </div>
 
         <div className="relative animate-in fade-in slide-in-from-bottom-6 duration-700 delay-150 fill-mode-both">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl shadow-xl shadow-primary/10 ring-1 ring-border sm:aspect-[5/4]">
-            <Image
-              src="/images/hero-sawah.png"
-              alt="Hamparan sawah hijau dan permukiman Dusun Sukomangun dengan latar pegunungan"
-              fill
-              priority
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="object-cover"
-            />
-          </div>
+          <Photo
+            {...FOTO_UTAMA}
+            className="aspect-[4/3] sm:aspect-[5/4]"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            priority
+          />
           <div className="absolute -bottom-5 left-4 right-4 flex items-center gap-4 rounded-2xl border border-border bg-card/95 p-4 shadow-lg backdrop-blur sm:left-6 sm:right-auto sm:max-w-xs">
             <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
               <Sprout className="size-5" aria-hidden="true" />
             </div>
             <div className="flex flex-col">
-              <span className="text-xs font-medium text-muted-foreground">Dari 21–22 rumah</span>
+              <span className="text-xs font-medium text-muted-foreground">Dari 22 rumah</span>
               <span className="font-serif text-base font-bold">Kini sekitar 70 rumah</span>
             </div>
           </div>
@@ -126,8 +131,8 @@ export function HeroSection() {
             Kekayaan yang dimiliki Sukomangun
           </h2>
           <p className="max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-            Dari sawah dan ternak hingga kesenian dan lanskap pegunungan — modal yang
-            terus dikembangkan warga.
+            Dari ladang terasering dan kesenian warisan hingga gotong royong dan usaha
+            mikro warga.
           </p>
         </div>
 

@@ -1,15 +1,15 @@
 import { AboutSection } from '@/components/about-section'
-import { ActivitiesSection } from '@/components/activities-section'
 import { ArtsSection } from '@/components/arts-section'
-import { FacilitiesSection } from '@/components/facilities-section'
 import { GeographySection } from '@/components/geography-section'
 import { HeroSection } from '@/components/hero-section'
-import { HopesSection } from '@/components/hopes-section'
-import { LeadersSection } from '@/components/leaders-section'
 import { MapSection } from '@/components/map-section'
+import { MosqueSection } from '@/components/mosque-section'
 import { PopulationSection } from '@/components/population-section'
+import { PosyanduSection } from '@/components/posyandu-section'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteNavbar } from '@/components/site-navbar'
+import { TpqSection } from '@/components/tpq-section'
+import { TraditionSection } from '@/components/tradition-section'
 
 export default function Page() {
   return (
@@ -21,11 +21,11 @@ export default function Page() {
         <GeographySection />
         <MapSection />
         <PopulationSection />
+        <TraditionSection />
+        <MosqueSection />
+        <TpqSection />
         <ArtsSection />
-        <ActivitiesSection />
-        <FacilitiesSection />
-        <LeadersSection />
-        <HopesSection />
+        <PosyanduSection />
       </main>
       <SiteFooter />
     </>

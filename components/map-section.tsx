@@ -36,7 +36,7 @@ export function MapSection() {
       <SectionHeader
         eyebrow="Lokasi & Peta"
         title="Menemukan Sukomangun"
-        description="Permukiman warga terpusat di tengah dusun, diapit persawahan dan ladang di kaki Gunung Giyanti."
+        description="Permukiman warga berada tepat di tengah dusun, dikelilingi bukit dan lahan perkebunan di sekitarnya."
       />
 
       <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.5fr] lg:items-start">

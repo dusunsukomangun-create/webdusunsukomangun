@@ -1,13 +1,17 @@
-import { Leaf, MapPin } from 'lucide-react'
+import { MapPin } from 'lucide-react'
 
 const FOOTER_LINKS = [
-  { href: '#Potensi', label: 'Potensi' },
-  { href: '#Galeri', label: 'Galeri' },
+  { href: '#potensi', label: 'Potensi' },
+  { href: '#galeri', label: 'Galeri' },
   { href: '#tentang', label: 'Tentang' },
   { href: '#geografi', label: 'Geografi' },
+  { href: '#peta', label: 'Peta' },
+  { href: '#penduduk', label: 'Penduduk' },
+  { href: '#tradisi', label: 'Tradisi' },
+  { href: '#masjid', label: 'Masjid' },
+  { href: '#tpq', label: 'TPQ' },
   { href: '#kesenian', label: 'Kesenian' },
-  { href: '#fasilitas', label: 'Fasilitas' },
-  { href: '#harapan', label: 'Harapan' },
+  { href: '#posyandu', label: 'Posyandu' },
 ]
 
 export function SiteFooter() {
