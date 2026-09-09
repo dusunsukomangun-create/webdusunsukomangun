@@ -77,7 +77,7 @@ const ARTS = [
       <>
         Namanya berakar dari kondisi geografis dusun yang dikelilingi sungai-sungai yang
         mengalir menuju Plalar, Ngarenan, dan sekitarnya, serta letaknya yang dekat dengan
-        Sendang Piwakan. Kata <em>suta</em> sendiri berarti <em>buto</em> atau raksasa,
+        Sendang Piwakan. Kata <em>suto</em> sendiri berarti <em>buto</em> atau raksasa,
         yang dimaknai sebagai sosok penjaga.
       </>
     ),

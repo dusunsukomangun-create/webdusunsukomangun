@@ -46,11 +46,6 @@ const SLIDES: PhotoData[] = [
     alt: 'Warga menyortir dan mengemas singkong ke dalam krat untuk didistribusikan',
     caption: 'Pengolahan singkong warga',
   },
-  {
-    src: '/images/Gambar-2.jpeg',
-    alt: 'Sekelompok pemuda duduk mengelilingi api unggun di jalan dusun pada malam hari',
-    caption: 'Kumpul malam pemuda dusun',
-  },
 ]
 
 export function HeroGallery() {

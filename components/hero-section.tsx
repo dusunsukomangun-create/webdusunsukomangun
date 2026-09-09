@@ -1,4 +1,4 @@
-import { ArrowDown, Handshake, MapPin, Moon, Mountain, Music, ShoppingBasket, Sprout, Wheat } from 'lucide-react'
+import { ArrowDown, Handshake, Landmark, MapPin, Moon, Mountain, Music, ShoppingBasket, Wheat } from 'lucide-react'
 import { HeroGallery } from '@/components/hero-gallery'
 import { Photo } from '@/components/photo'
 
@@ -89,15 +89,15 @@ export function HeroSection() {
           <ul className="mt-2 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">
             <li className="flex items-center gap-2">
               <Wheat className="size-4 text-primary" aria-hidden="true" />
-              Pertanian terasering
+              Pertanian
             </li>
             <li className="flex items-center gap-2">
               <Mountain className="size-4 text-primary" aria-hidden="true" />
-              Dikelilingi perbukitan
+              Perbukitan
             </li>
             <li className="flex items-center gap-2">
-              <Sprout className="size-4 text-primary" aria-hidden="true" />
-              Tradisi yang lestari
+              <Landmark className="size-4 text-primary" aria-hidden="true" />
+              Tradisi
             </li>
           </ul>
         </div>

@@ -50,7 +50,7 @@ const FOTO_2: PhotoData[] = [
 const TRADISI = [
   {
     Icon: Moon,
-    when: 'Rutin',
+    when: 'Menjelang Maulid Nabi',
     title: 'Diba’an',
     body: 'Awalnya hanya diikuti kaum perempuan di wilayah Ngarenan, sebelum berkembang dan menyebar ke dusun-dusun lain.',
   },
@@ -68,19 +68,19 @@ const TRADISI = [
   },
   {
     Icon: Moon,
-    when: 'Menjelang Maulid',
+    when: 'Kegiatan Tahunan',
     title: 'Maulid Nabi SAW',
     body: 'Diperingati setiap tahun, didahului pembacaan Diba’an selama 12 malam menjelang peringatan.',
   },
   {
     Icon: CalendarDays,
-    when: 'Bulan Mulud',
+    when: 'Bulan Rabiul Awwal',
     title: 'Khataman TPA',
     body: 'Kegiatan khataman Taman Pendidikan Al-Qur’an yang ikut dilaksanakan pada bulan Mulud.',
   },
   {
     Icon: Moon,
-    when: 'Turun-temurun',
+    when: 'Kegiatan Rutin',
     title: 'Tahlilan & Ruwahan',
     body: 'Keduanya telah menjadi bagian dari kehidupan keagamaan warga sejak zaman dahulu.',
   },

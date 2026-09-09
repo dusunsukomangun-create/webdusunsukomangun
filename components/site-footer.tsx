@@ -5,8 +5,8 @@ import { MapPin, MessageCircle } from 'lucide-react'
 //   WA_NOMOR  -> hanya angka, dipakai untuk tautan wa.me
 //   WA_TAMPIL -> berspasi, yang dibaca pengunjung
 const KONTAK = {
-  nama: 'Pak Dwi',
-  jabatan: 'Kepala Dusun',
+  nama: 'Pak Dwi Rusmanto',
+  jabatan: 'Kepala Dusun Sukomangun',
   waNomor: '6281770889686',
   waTampil: '+62 817 7088 9686',
 }
