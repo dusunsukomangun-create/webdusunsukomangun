@@ -1,4 +1,4 @@
-import { Building2, ChevronDown, HeartPulse } from 'lucide-react'
+import { Baby, Building2, ChevronDown } from 'lucide-react'
 import { Photo } from '@/components/photo'
 import { Section, SectionHeader } from '@/components/section'
 
@@ -11,7 +11,7 @@ const FOTO_MASJID = {
   caption: 'Masjid Dusun Sukomangun',
 }
 const FOTO_POSYANDU = {
-  src: '/placeholder.svg',
+  src: '/images/posyandu.jpeg',
   alt: 'Kegiatan Posyandu Dusun Sukomangun yang dihadiri warga',
   caption: 'Kegiatan Posyandu warga',
 }
@@ -44,7 +44,7 @@ const FASILITAS = [
     ],
   },
   {
-    Icon: HeartPulse,
+    Icon: Baby,
     tag: 'Setiap tanggal 13',
     title: 'Posyandu',
     foto: FOTO_POSYANDU,

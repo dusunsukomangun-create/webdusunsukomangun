@@ -25,6 +25,11 @@ const FOTO_ALMONTRAMONTRO: PhotoData[] = [
     alt: 'Para pemain rebana berlatih bersama di ruang tamu rumah warga',
     caption: '',
   },
+     {
+    src: '/images/muntamontro1.jpeg',
+    alt: 'Para pemain rebana berlatih bersama di ruang tamu rumah warga',
+    caption: '',
+  },
   // Salin blok di atas untuk menambah foto berikutnya.
 ]
 
@@ -34,13 +39,33 @@ const FOTO_TELOGOSUTO: PhotoData[] = [
     alt: 'Para penari berkostum dan bertopeng membawakan Telogo Suto di atas panggung bersama penabuh gamelan',
     caption: '',
   },
+   {
+    src: '/images/telogosuto1.jpeg',
+    alt: 'Para penari berkostum dan bertopeng membawakan Telogo Suto di atas panggung bersama penabuh gamelan',
+    caption: '',
+  },
   {
-    src: '/images/topeng.jpeg',
+    src: '/images/telogosuto2.jpeg',
     alt: 'Penari Telogo Suto berbaris di atas panggung mengenakan kostum dan hiasan kepala lengkap',
     caption: '',
   },
   {
-    src: '/images/kesenian-jatilan-kostum-1.jpeg',
+    src: '/images/telogosuto3.jpeg',
+    alt: 'Kendang, bedug, angklung, dan gamelan milik kelompok kesenian dusun yang tersimpan rapi',
+    caption: '',
+  },
+   {
+    src: '/images/telogosuto4.jpeg',
+    alt: 'Para penari berkostum dan bertopeng membawakan Telogo Suto di atas panggung bersama penabuh gamelan',
+    caption: '',
+  },
+  {
+    src: '/images/telogosuto5.jpeg',
+    alt: 'Penari Telogo Suto berbaris di atas panggung mengenakan kostum dan hiasan kepala lengkap',
+    caption: '',
+  },
+    {
+    src: '/images/telogosuto7.jpeg',
     alt: 'Kendang, bedug, angklung, dan gamelan milik kelompok kesenian dusun yang tersimpan rapi',
     caption: '',
   },
