@@ -12,7 +12,7 @@ import { Section, SectionHeader } from '@/components/section'
 const FOTO_ALMONTRAMONTRO: PhotoData[] = [
   {
     src: '/images/kesenian-almontramontro-grup.jpeg',
-    alt: 'Anggota grup rebana Al Montra Montro berfoto bersama mengenakan seragam batik dengan alat musiknya',
+    alt: 'Anggota grup rebana Al Montra Montro / Sabillun Najah berfoto bersama mengenakan seragam batik dengan alat musiknya',
     caption: '',
   },
   {
@@ -78,8 +78,8 @@ const ARTS = [
     Icon: Drum,
     DetailIcon: Music,
     tag: 'Musik religi',
-    title: 'Al Montra Montro',
-    body: 'Grup rebana dusun yang awalnya bernama Al-Kejawen. Namanya diganti oleh seorang Gus lewat ungkapan “wong-wongane iku mantra-mantru”, lalu Mbah Madhon menetapkannya menjadi Al Montra Montro — nama yang bertahan hingga saat ini.',
+    title: 'Al Montra Montro / Sabillun Najah',
+    body: 'Grup rebana dusun yang awalnya bernama Al-Kejawen. Namanya diganti oleh seorang Gus lewat ungkapan “wong-wongane iku mantra-mantru”, lalu Mbah Madhon menetapkannya menjadi Al Montra Montro / Sabillun Najah — nama yang bertahan hingga saat ini.',
     detailTitle: 'Keunikan',
     detail: (
       <>
@@ -122,7 +122,7 @@ export function ArtsSection() {
       <div className="mt-12 grid gap-6 lg:grid-cols-2">
         <PhotoSlider
           photos={FOTO_ALMONTRAMONTRO}
-          label="Foto Al Montra Montro"
+          label="Foto Al Montra Montro / Sabillun Najah"
           sizes="(min-width: 1024px) 46vw, 100vw"
         />
         <PhotoSlider

@@ -20,7 +20,7 @@ const POTENSI = [
   {
     Icon: Music,
     title: 'Kesenian',
-    body: 'Jathilan, Telogo Suto, Al Montra Montro, dan Tari Topeng terus diwariskan antar-generasi sebagai aset budaya khas dusun.',
+    body: 'Jathilan, Telogo Suto, Al Montra Montro / Sabillun Najah, dan Tari Topeng terus diwariskan antar-generasi sebagai aset budaya khas dusun.',
   },
   {
     Icon: Moon,

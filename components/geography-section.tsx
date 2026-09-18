@@ -4,8 +4,8 @@ import { Section, SectionHeader } from '@/components/section'
 const BORDERS = {
   utara: { label: 'Utara', place: 'Dusun Gopaan', Icon: ArrowUp },
   barat: { label: 'Barat', place: 'Dusun Dobrasan', Icon: ArrowLeft },
-  timur: { label: 'Timur', place: 'Genito', Icon: ArrowRight },
-  selatan: { label: 'Selatan', place: 'Gunung Giyanti', Icon: ArrowDown },
+  timur: { label: 'Timur', place: 'Genito Lor', Icon: ArrowRight },
+  selatan: { label: 'Selatan', place: 'Dusun Kwangsan', Icon: ArrowDown },
 }
 
 function BorderCard({
@@ -42,7 +42,7 @@ export function GeographySection() {
           <SectionHeader
             eyebrow="Geografi & Batas Wilayah"
             title="Dikelilingi bukit dan perkebunan"
-            description="Dusun Sukomangun berbatasan dengan tiga dusun dan satu bukit, dengan permukiman warga berada tepat di tengahnya."
+            description="Dusun Sukomangun berbatasan dengan empat wilayah tetangga, dengan permukiman warga berada tepat di tengahnya."
           />
           <div className="flex items-start gap-3 rounded-2xl border border-border bg-card p-4 text-sm leading-relaxed text-muted-foreground">
             <Info className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
@@ -57,7 +57,7 @@ export function GeographySection() {
           <div
             className="grid grid-cols-3 grid-rows-3 gap-3 sm:gap-4"
             role="img"
-            aria-label="Peta batas wilayah: Utara Dusun Gopaan, Barat Dusun Dobrasan, Timur Genito, Selatan Gunung Giyanti"
+            aria-label="Peta batas wilayah: Utara Dusun Gopaan, Barat Dusun Dobrasan, Timur Genito Lor, Selatan Dusun Kwangsan"
           >
             <div className="col-start-2 row-start-1">
               <BorderCard {...BORDERS.utara} />
