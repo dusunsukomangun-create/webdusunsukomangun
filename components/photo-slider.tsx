@@ -11,6 +11,12 @@ type PhotoSliderProps = {
   sizes?: string
   priority?: boolean
   label?: string
+  /** Geser sendiri ke foto berikutnya tanpa disentuh. */
+  autoplay?: boolean
+  /** Jeda antar foto saat bergeser sendiri. */
+  autoplayMs?: number
+  /** Lamanya geser otomatis berhenti setelah pengunjung menggeser sendiri. */
+  resumeMs?: number
 }
 
 /**
@@ -25,9 +31,13 @@ export function PhotoSlider({
   sizes = '(min-width: 1024px) 50vw, 100vw',
   priority = false,
   label = 'Galeri foto',
+  autoplay = false,
+  autoplayMs = 3000,
+  resumeMs = 7000,
 }: PhotoSliderProps) {
   const trackRef = useRef<HTMLDivElement>(null)
   const dragRef = useRef<{ x: number; scroll: number } | null>(null)
+  const pausedUntilRef = useRef(0)
   const [active, setActive] = useState(0)
   const [canPrev, setCanPrev] = useState(false)
   const [canNext, setCanNext] = useState(true)
@@ -86,9 +96,36 @@ export function PhotoSlider({
 
   const step = useCallback((dir: -1 | 1) => goTo(nearestIndex() + dir), [goTo, nearestIndex])
 
+  // Sekali pengunjung menggeser sendiri, geser otomatis istirahat dulu.
+  const pause = useCallback(() => {
+    pausedUntilRef.current = Date.now() + resumeMs
+  }, [resumeMs])
+
+  // Geser sendiri ke foto berikutnya, lalu kembali ke foto pertama di ujung.
+  useEffect(() => {
+    if (!autoplay || !multiple) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    let timer: ReturnType<typeof setTimeout>
+    const tick = () => {
+      const paused = pausedUntilRef.current - Date.now()
+      if (paused > 0) {
+        timer = setTimeout(tick, paused)
+        return
+      }
+      // Tab yang tidak terlihat dibiarkan diam supaya tidak melompat jauh.
+      if (!document.hidden) goTo((nearestIndex() + 1) % photos.length)
+      timer = setTimeout(tick, autoplayMs)
+    }
+
+    timer = setTimeout(tick, autoplayMs)
+    return () => clearTimeout(timer)
+  }, [autoplay, multiple, autoplayMs, goTo, nearestIndex, photos.length])
+
   // Geser dengan mouse. Sentuhan tetap memakai scroll bawaan browser.
   function startDrag(e: React.PointerEvent<HTMLDivElement>) {
     const el = trackRef.current
+    pause()
     if (!el || !multiple || e.pointerType !== 'mouse') return
     dragRef.current = { x: e.clientX, scroll: el.scrollLeft }
     el.style.scrollSnapType = 'none'
@@ -131,12 +168,15 @@ export function PhotoSlider({
           onPointerMove={moveDrag}
           onPointerUp={endDrag}
           onPointerCancel={endDrag}
+          onWheel={pause}
           onKeyDown={(e) => {
             if (e.key === 'ArrowRight') {
               e.preventDefault()
+              pause()
               step(1)
             } else if (e.key === 'ArrowLeft') {
               e.preventDefault()
+              pause()
               step(-1)
             }
           }}
@@ -155,7 +195,10 @@ export function PhotoSlider({
 
         <button
           type="button"
-          onClick={() => step(-1)}
+          onClick={() => {
+            pause()
+            step(-1)
+          }}
           disabled={!canPrev}
           aria-label="Foto sebelumnya"
           className="absolute left-3 top-1/2 hidden size-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/90 text-foreground shadow-lg backdrop-blur transition-all hover:bg-card disabled:pointer-events-none disabled:opacity-0 sm:flex"
@@ -164,7 +207,10 @@ export function PhotoSlider({
         </button>
         <button
           type="button"
-          onClick={() => step(1)}
+          onClick={() => {
+            pause()
+            step(1)
+          }}
           disabled={!canNext}
           aria-label="Foto berikutnya"
           className="absolute right-3 top-1/2 hidden size-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/90 text-foreground shadow-lg backdrop-blur transition-all hover:bg-card disabled:pointer-events-none disabled:opacity-0 sm:flex"
@@ -178,7 +224,10 @@ export function PhotoSlider({
           <button
             key={i}
             type="button"
-            onClick={() => goTo(i)}
+            onClick={() => {
+              pause()
+              goTo(i)
+            }}
             aria-label={`Ke foto ${i + 1}`}
             aria-current={i === active}
             className={

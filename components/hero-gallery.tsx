@@ -46,6 +46,21 @@ const SLIDES: PhotoData[] = [
     alt: 'Warga menyortir dan mengemas singkong ke dalam krat untuk didistribusikan',
     caption: 'Pengolahan singkong warga',
   },
+    {
+    src: '/images/karnaval1.jpeg',
+    alt: '',
+    caption: '',
+  },
+  {
+    src: '/images/karnaval2.jpeg',
+    alt: '',
+    caption: '',
+  },
+  {
+    src: '/images/karnaval3.jpeg',
+    alt: '',
+    caption: '',
+  },
 ]
 
 export function HeroGallery() {
@@ -53,6 +68,7 @@ export function HeroGallery() {
     <PhotoSlider
       photos={SLIDES}
       label="Galeri foto Dusun Sukomangun"
+      autoplay
       slideClassName="aspect-[4/3] w-[86%] sm:aspect-[3/2] sm:w-[62%] lg:w-[46%]"
       sizes="(min-width: 1024px) 46vw, (min-width: 640px) 62vw, 86vw"
     />

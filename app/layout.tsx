@@ -30,6 +30,10 @@ export const metadata: Metadata = {
     'Jawa Tengah',
     'profil dusun',
   ],
+  // Penanda kepemilikan situs untuk Google Search Console. Jangan dihapus.
+  verification: {
+    google: 'PyrbL15022avmZ08R07TbVtpqGzqkULsjkJAKAbVFBs',
+  },
   icons: {
     icon: [
       {
