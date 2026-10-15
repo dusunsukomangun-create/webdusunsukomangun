@@ -1,20 +1,22 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
+import { Playfair_Display, Source_Sans_3 } from 'next/font/google'
 import { SITE_URL } from '@/lib/site'
 import './globals.css'
 
-const inter = Inter({
+// Judul: huruf berkait klasik yang anggun.
+const playfair = Playfair_Display({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-playfair',
   display: 'swap',
+  style: ['normal', 'italic'],
 })
 
-const jakarta = Plus_Jakarta_Sans({
+// Isi: huruf bersih yang mudah dibaca di HP.
+const sourceSans = Source_Sans_3({
   subsets: ['latin'],
-  variable: '--font-jakarta',
+  variable: '--font-source-sans',
   display: 'swap',
-  weight: ['500', '600', '700', '800'],
 })
 
 export const metadata: Metadata = {
@@ -23,7 +25,6 @@ export const metadata: Metadata = {
   title: 'Dusun Sukomangun — Desa Genito, Windusari, Magelang',
   description:
     'Profil resmi Dusun Sukomangun, Desa Genito, Kecamatan Windusari, Kabupaten Magelang, Jawa Tengah. Sejarah, geografi, kependudukan, kesenian, tradisi, dan fasilitas dusun.',
-  generator: 'v0.app',
   keywords: [
     'Sukomangun',
     'Dusun Sukomangun',
@@ -44,7 +45,8 @@ export const metadata: Metadata = {
       'Profil resmi Dusun Sukomangun: sejarah, geografi, kependudukan, kesenian, tradisi, dan fasilitas dusun.',
     images: [
       {
-        url: '/images/Gambar-4.jpeg',
+        // Potongan 1200x630 dari Gambar-4.jpeg, ukuran yang dianjurkan WhatsApp/Facebook.
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Lanskap perbukitan berundak di Dusun Sukomangun',
@@ -75,8 +77,8 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  colorScheme: 'light',
-  themeColor: '#2f7d4f',
+  colorScheme: 'light dark',
+  themeColor: '#1b4d33',
   width: 'device-width',
   initialScale: 1,
 }
@@ -87,7 +89,21 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="id" className={`${inter.variable} ${jakarta.variable} bg-background`}>
+    <html
+      lang="id"
+      data-theme="light"
+      className={`${playfair.variable} ${sourceSans.variable} bg-latar`}
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Pasang mode terang/gelap sebelum halaman tampil, supaya tidak berkedip.
+            Urutan: pilihan pengunjung yang tersimpan, lalu setelan HP/laptop. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("tema");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}})()`,
+          }}
+        />
+      </head>
       <body className="antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

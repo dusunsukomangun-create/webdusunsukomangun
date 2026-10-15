@@ -32,26 +32,26 @@ const DETAILS = [
 
 export function MapSection() {
   return (
-    <Section id="peta" tone="soft">
+    <Section id="peta">
       <SectionHeader
         eyebrow="Lokasi & Peta"
         title="Lokasi Sukomangun"
         description="Rumah-rumah warga berkumpul di tengah dusun, dengan bukit dan ladang yang mengelilinginya."
       />
 
-      <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_1.5fr] lg:items-start">
-        <div className="flex flex-col gap-3">
+      <div className="mt-12 grid gap-6 lg:grid-cols-[2fr_3fr]">
+        <div className="flex flex-col gap-4 [&_p]:text-left">
           {DETAILS.map(({ Icon, title, body }) => (
             <article
               key={title}
-              className="flex gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-shadow hover:shadow-md"
+              className="flex gap-4 rounded-2xl border border-garis bg-kartu p-5 shadow-[0_8px_24px_-16px_var(--bayang)]"
             >
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-lembut text-hijau ring-1 ring-emas/30">
                 <Icon className="size-5" aria-hidden="true" />
-              </div>
-              <div className="flex flex-col gap-1">
-                <h3 className="text-base font-bold">{title}</h3>
-                <p className="text-pretty text-sm leading-relaxed text-muted-foreground">{body}</p>
+              </span>
+              <div>
+                <h3 className="text-lg font-semibold">{title}</h3>
+                <p className="mt-1 leading-relaxed text-pudar">{body}</p>
               </div>
             </article>
           ))}
@@ -60,23 +60,21 @@ export function MapSection() {
             href={MAPS_LINK}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/25 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            className="mt-2 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-hijau px-6 font-semibold text-white shadow-md transition-colors hover:bg-hijau-tua dark:bg-hijau-tua dark:hover:bg-hijau-gelap"
           >
             Buka di Google Maps
             <ExternalLink className="size-4" aria-hidden="true" />
           </a>
         </div>
 
-        <div className="overflow-hidden rounded-3xl shadow-lg shadow-primary/10 ring-1 ring-border">
-          <iframe
-            src={MAPS_EMBED}
-            title="Peta lokasi Dusun Sukomangun, Desa Genito, Kecamatan Windusari, Kabupaten Magelang"
-            loading="lazy"
-            allowFullScreen
-            referrerPolicy="no-referrer-when-downgrade"
-            className="h-[320px] w-full border-0 sm:h-[420px] lg:h-full lg:min-h-[480px]"
-          />
-        </div>
+        <iframe
+          src={MAPS_EMBED}
+          title="Peta lokasi Dusun Sukomangun, Desa Genito, Kecamatan Windusari, Kabupaten Magelang"
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+          className="h-[340px] w-full rounded-2xl border-0 bg-garis shadow-[0_12px_32px_-12px_var(--bayang)] sm:h-[420px] lg:h-full lg:min-h-[460px]"
+        />
       </div>
     </Section>
   )

@@ -8,7 +8,7 @@ import { Section, SectionHeader } from '@/components/section'
 const FOTO_3 = {
   src: '/images/umkm-keranjang-tembakau-panggul.jpeg',
   alt: 'Tiga warga memanggul keranjang bambu besar untuk tembakau di jalan Dusun Sukomangun',
-  caption: '',
+  caption: 'Memanggul keranjang tembakau',
 }
 // ────────────────────────────────────────────────────────────────────
 
@@ -39,53 +39,45 @@ const DETAILS = [
 
 export function PopulationSection() {
   return (
-    <Section id="penduduk" tone="soft">
+    <Section id="penduduk" tone="lembut">
       <SectionHeader
         eyebrow="Kependudukan & Ekonomi"
-        title="Komunitas yang terus tumbuh"
+        title="Komunitas yang Terus Tumbuh"
         description="Dari 22 rumah berdinding anyaman bambu hingga sekitar 70 rumah dengan infrastruktur yang terus diperbaiki."
       />
 
-      <dl className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-        {STATS.map(({ value, label, Icon }, i) => (
+      <dl className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        {STATS.map(({ value, label, Icon }) => (
           <div
             key={label}
-            className={
-              i === 0
-                ? 'flex flex-col gap-3 rounded-2xl bg-primary p-5 text-primary-foreground shadow-lg shadow-primary/25 sm:p-6'
-                : 'flex flex-col gap-3 rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6'
-            }
+            className="flex flex-col items-center rounded-2xl border border-garis bg-kartu p-5 text-center shadow-[0_8px_24px_-16px_var(--bayang)] sm:p-6"
           >
-            <Icon className={i === 0 ? 'size-5 opacity-80' : 'size-5 text-primary'} aria-hidden="true" />
-            <dd className="font-serif text-3xl font-extrabold tracking-tight sm:text-4xl">{value}</dd>
-            <dt
-              className={
-                i === 0
-                  ? 'text-sm leading-snug opacity-85'
-                  : 'text-sm leading-snug text-muted-foreground'
-              }
-            >
-              {label}
-            </dt>
+            <Icon className="size-5 text-emas" aria-hidden="true" />
+            {/* HTML mewajibkan <dt> sebelum <dd>; order-last menaruh keterangan
+                kembali di bawah angkanya. */}
+            <dt className="order-last mt-1 text-sm leading-snug text-pudar">{label}</dt>
+            <dd className="mt-3 font-serif text-2xl font-semibold text-hijau-kuat sm:text-4xl">
+              {value}
+            </dd>
           </div>
         ))}
       </dl>
 
-      <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1.2fr] lg:items-start">
-        <Photo {...FOTO_3} sizes="(min-width: 1024px) 42vw, 100vw" />
+      <div className="mt-8 grid gap-6 lg:grid-cols-2 lg:items-start">
+        <Photo {...FOTO_3} sizes="(min-width: 1024px) 50vw, 100vw" />
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="flex flex-col gap-4 [&_p]:text-left">
           {DETAILS.map(({ Icon, title, body }) => (
             <article
               key={title}
-              className="flex gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-shadow hover:shadow-md"
+              className="flex gap-4 rounded-2xl border border-garis bg-kartu p-5 shadow-[0_8px_24px_-16px_var(--bayang)]"
             >
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
+              <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-lembut text-hijau ring-1 ring-emas/30">
                 <Icon className="size-5" aria-hidden="true" />
-              </div>
-              <div className="flex flex-col gap-1">
-                <h3 className="text-base font-bold">{title}</h3>
-                <p className="text-pretty text-sm leading-relaxed text-muted-foreground">{body}</p>
+              </span>
+              <div>
+                <h3 className="text-lg font-semibold">{title}</h3>
+                <p className="mt-1 leading-relaxed text-pudar">{body}</p>
               </div>
             </article>
           ))}
