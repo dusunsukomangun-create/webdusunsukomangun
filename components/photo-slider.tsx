@@ -17,6 +17,8 @@ type PhotoSliderProps = {
   autoplayMs?: number
   /** Lamanya geser otomatis berhenti setelah pengunjung menggeser sendiri. */
   resumeMs?: number
+  /** 'gelap' untuk galeri yang diletakkan di atas latar gelap. */
+  tone?: 'terang' | 'gelap'
 }
 
 /**
@@ -34,6 +36,7 @@ export function PhotoSlider({
   autoplay = false,
   autoplayMs = 3000,
   resumeMs = 7000,
+  tone = 'terang',
 }: PhotoSliderProps) {
   const trackRef = useRef<HTMLDivElement>(null)
   const dragRef = useRef<{ x: number; scroll: number } | null>(null)
@@ -155,8 +158,12 @@ export function PhotoSlider({
     return <Photo {...only} className={slideClassName} sizes={sizes} priority={priority} />
   }
 
+  const dark = tone === 'gelap'
+  const arrow =
+    'absolute top-1/2 hidden size-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-hijau-gelap shadow-lg transition hover:bg-white disabled:pointer-events-none disabled:opacity-0 sm:flex'
+
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-4">
       <div className="relative">
         <div
           ref={trackRef}
@@ -180,7 +187,7 @@ export function PhotoSlider({
               step(-1)
             }
           }}
-          className="flex snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain rounded-3xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden cursor-grab select-none active:cursor-grabbing focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+          className="flex cursor-grab select-none snap-x snap-mandatory gap-4 overflow-x-auto overscroll-x-contain rounded-2xl [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
         >
           {photos.map((photo, i) => (
             <Photo
@@ -193,6 +200,14 @@ export function PhotoSlider({
           ))}
         </div>
 
+        {/* Nomor foto yang sedang tampil. */}
+        <span
+          className="pointer-events-none absolute right-3 top-3 rounded-full bg-black/55 px-3 py-1 text-sm font-semibold tabular-nums text-white backdrop-blur-sm"
+          aria-live="polite"
+        >
+          {active + 1} / {photos.length}
+        </span>
+
         <button
           type="button"
           onClick={() => {
@@ -201,7 +216,7 @@ export function PhotoSlider({
           }}
           disabled={!canPrev}
           aria-label="Foto sebelumnya"
-          className="absolute left-3 top-1/2 hidden size-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/90 text-foreground shadow-lg backdrop-blur transition-all hover:bg-card disabled:pointer-events-none disabled:opacity-0 sm:flex"
+          className={`${arrow} left-3`}
         >
           <ChevronLeft className="size-5" aria-hidden="true" />
         </button>
@@ -213,7 +228,7 @@ export function PhotoSlider({
           }}
           disabled={!canNext}
           aria-label="Foto berikutnya"
-          className="absolute right-3 top-1/2 hidden size-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-card/90 text-foreground shadow-lg backdrop-blur transition-all hover:bg-card disabled:pointer-events-none disabled:opacity-0 sm:flex"
+          className={`${arrow} right-3`}
         >
           <ChevronRight className="size-5" aria-hidden="true" />
         </button>
@@ -230,11 +245,11 @@ export function PhotoSlider({
             }}
             aria-label={`Ke foto ${i + 1}`}
             aria-current={i === active}
-            className={
+            className={`h-1.5 rounded-full transition-all ${
               i === active
-                ? 'h-2 w-6 rounded-full bg-primary transition-all'
-                : 'h-2 w-2 rounded-full bg-border transition-all hover:bg-muted-foreground/50'
-            }
+                ? `w-8 ${dark ? 'bg-emas-muda' : 'bg-hijau'}`
+                : `w-3 ${dark ? 'bg-white/30 hover:bg-white/50' : 'bg-garis hover:bg-pudar/40'}`
+            }`}
           />
         ))}
       </div>

@@ -46,20 +46,20 @@ const SLIDES: PhotoData[] = [
     alt: 'Warga menyortir dan mengemas singkong ke dalam krat untuk didistribusikan',
     caption: 'Pengolahan singkong warga',
   },
-    {
+  {
     src: '/images/karnaval1.jpeg',
-    alt: '',
-    caption: '',
+    alt: 'Pemuda berkaus putih Sukomangun menaikkan patung raksasa penunggang kuda lumping ke atas tandu saat karnaval',
+    caption: 'Karnaval dusun',
   },
   {
     src: '/images/karnaval2.jpeg',
-    alt: '',
-    caption: '',
+    alt: 'Pemuda dusun memanggul tandu bambu berisi patung raksasa penunggang kuda lumping di jalan antara ladang dan kandang',
+    caption: 'Arak-arakan karnaval',
   },
   {
     src: '/images/karnaval3.jpeg',
-    alt: '',
-    caption: '',
+    alt: 'Arak-arakan patung raksasa melewati rumah-rumah warga di jalan Dusun Sukomangun',
+    caption: 'Arak-arakan melewati permukiman',
   },
 ]
 
@@ -69,6 +69,7 @@ export function HeroGallery() {
       photos={SLIDES}
       label="Galeri foto Dusun Sukomangun"
       autoplay
+      tone="gelap"
       slideClassName="aspect-[4/3] w-[86%] sm:aspect-[3/2] sm:w-[62%] lg:w-[46%]"
       sizes="(min-width: 1024px) 46vw, (min-width: 640px) 62vw, 86vw"
     />

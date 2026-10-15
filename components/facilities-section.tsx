@@ -31,7 +31,7 @@ const FASILITAS = [
       },
       {
         when: 'Tahun 1969',
-        body: 'Mushola sederhana itu perlahan tumbuh menjadi sebuah masjid, terwujud karena tangan-tangan warga yang bahu-membahu membangunnya — bahkan pasir dan bahan bangunannya mereka ambil dari tanah ladang sendiri.',
+        body: 'Mushola sederhana itu perlahan tumbuh menjadi sebuah masjid, terwujud karena tangan-tangan warga yang bahu-membahu membangunnya. Bahkan pasir dan bahan bangunannya mereka ambil dari tanah ladang sendiri.',
       },
       {
         when: 'Kini',
@@ -56,7 +56,7 @@ const FASILITAS = [
       },
       {
         when: 'Lima kader tanpa masa jabatan',
-        body: 'Kegiatan didukung lima orang kader yang tidak memiliki masa jabatan tertentu — mereka menjalankan tugas hingga memutuskan untuk berhenti.',
+        body: 'Kegiatan didukung lima orang kader yang tidak memiliki masa jabatan tertentu. Mereka menjalankan tugas hingga memutuskan untuk berhenti.',
       },
       {
         when: 'Jadwal pelaksanaan',
@@ -72,63 +72,45 @@ const FASILITAS = [
 
 export function FacilitiesSection() {
   return (
-    <Section id="fasilitas">
+    <Section id="fasilitas" tone="lembut">
       <SectionHeader
         eyebrow="Fasilitas Dusun"
-        title="Sarana yang menopang kehidupan warga"
-        align="center"
+        title="Sarana yang Menopang Kehidupan Warga"
       />
 
-      <div className="mt-10 grid gap-6 lg:grid-cols-2 lg:items-start">
+      <div className="mt-12 grid gap-6 lg:grid-cols-2 lg:items-start">
         {FASILITAS.map(({ Icon, tag, title, body, foto, detail }) => (
           <article
             key={title}
-            className="flex flex-col gap-6 rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-7"
+            className="flex flex-col gap-5 rounded-2xl border border-garis bg-kartu p-5 shadow-[0_8px_24px_-16px_var(--bayang)] sm:p-6 [&_p]:text-left"
           >
-            <Photo
-              {...foto}
-              className="aspect-[16/10]"
-              sizes="(min-width: 1024px) 46vw, 100vw"
-            />
+            <Photo {...foto} className="aspect-[16/10]" sizes="(min-width: 1024px) 46vw, 100vw" />
 
             <div className="flex items-center justify-between gap-4">
-              <span className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-secondary text-primary">
-                <Icon className="size-7" aria-hidden="true" />
-              </span>
-              <span className="rounded-full bg-muted px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              <h3 className="flex items-center gap-3 text-2xl font-semibold">
+                <Icon className="size-6 text-hijau" aria-hidden="true" />
+                {title}
+              </h3>
+              <span className="rounded-full bg-lembut px-3 py-1 text-sm font-semibold text-emas">
                 {tag}
               </span>
             </div>
 
-            <div className="flex flex-col gap-3">
-              <h3 className="text-balance text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
-                {title}
-              </h3>
-              <p className="text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-                {body}
-              </p>
-            </div>
+            <p className="leading-relaxed text-pudar">{body}</p>
 
             {/* Rincian yang tersembunyi sampai tombol ditekan. */}
-            <details className="group mt-auto">
-              <summary className="flex w-fit cursor-pointer list-none items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/25 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring [&::-webkit-details-marker]:hidden">
+            <details className="group">
+              <summary className="inline-flex cursor-pointer list-none items-center gap-2 rounded-full bg-hijau px-5 py-2.5 font-semibold text-white transition-colors hover:bg-hijau-tua dark:bg-hijau-tua dark:hover:bg-hijau-gelap [&::-webkit-details-marker]:hidden">
                 <span className="group-open:hidden">Baca selengkapnya</span>
                 <span className="hidden group-open:inline">Tutup</span>
-                <ChevronDown
-                  className="size-4 transition-transform group-open:rotate-180"
-                  aria-hidden="true"
-                />
+                <ChevronDown className="size-4 transition-transform group-open:rotate-180" aria-hidden="true" />
               </summary>
 
-              <ul className="mt-5 flex flex-col gap-4 border-t border-border pt-5">
+              <ul className="mt-5 flex flex-col gap-4 border-l-2 border-emas/50 pl-5">
                 {detail.map((item) => (
-                  <li key={item.when} className="flex flex-col gap-1">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-primary">
-                      {item.when}
-                    </span>
-                    <p className="text-pretty text-sm leading-relaxed text-muted-foreground">
-                      {item.body}
-                    </p>
+                  <li key={item.when}>
+                    <span className="font-semibold text-hijau-kuat">{item.when}</span>
+                    <p className="mt-1 leading-relaxed text-pudar">{item.body}</p>
                   </li>
                 ))}
               </ul>

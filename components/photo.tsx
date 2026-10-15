@@ -6,8 +6,10 @@ import Image from 'next/image'
  * ═══════════════════════════════════════════════════════════════════
  *  1. Taruh file foto di folder  public/images/
  *     Nama file: huruf kecil, tanpa spasi. Contoh: masjid-lama.jpg
+ *     Kecilkan dulu fotonya (sisi terpanjang ±1600 px, di bawah 400 KB),
+ *     misalnya lewat squoosh.app, supaya situs tetap ringan dibuka di HP.
  *
- *  2. Buka file bagian yang ingin diganti (mis. components/mosque-section.tsx),
+ *  2. Buka file bagian yang ingin diganti (mis. components/about-section.tsx),
  *     cari blok bertanda  ── FOTO ──  di bagian atas file, lalu ganti
  *     '/placeholder.svg' menjadi '/images/masjid-lama.jpg'.
  *
@@ -21,7 +23,7 @@ export const PLACEHOLDER = '/placeholder.svg'
 export type PhotoData = {
   src: string
   alt: string
-  /** Keterangan yang tampil di pojok kanan bawah foto. Boleh dikosongkan. */
+  /** Keterangan yang tampil di pojok kiri bawah foto. Boleh dikosongkan. */
   caption?: string
 }
 
@@ -44,33 +46,20 @@ export function Photo({
 
   return (
     <figure
-      className={`relative overflow-hidden rounded-3xl bg-muted shadow-lg shadow-primary/10 ring-1 ring-border ${className}`}
+      className={`relative overflow-hidden rounded-2xl bg-garis shadow-[0_12px_32px_-12px_var(--bayang)] ${className}`}
     >
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        priority={priority}
-        sizes={sizes}
-        className="object-cover"
-      />
+      <Image src={src} alt={alt} fill priority={priority} sizes={sizes} className="object-cover" />
 
       {isPlaceholder && (
-        <span className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-foreground/75 px-4 py-2 text-center text-xs font-semibold text-primary-foreground backdrop-blur-sm">
+        <span className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-black/70 px-4 py-2 text-sm font-semibold text-white">
           Foto belum diisi
         </span>
       )}
 
       {caption && (
-        <>
-          <div
-            className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-foreground/70 to-transparent"
-            aria-hidden="true"
-          />
-          <figcaption className="pointer-events-none absolute bottom-3 right-4 max-w-[80%] text-balance font-serif text-right text-base font-bold leading-snug text-primary-foreground [text-shadow:0_1px_6px_rgb(0_0_0/0.55)] sm:bottom-4 sm:right-5 sm:text-lg">
-            {caption}
-          </figcaption>
-        </>
+        <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-5 pb-4 pt-12 text-base font-semibold text-white">
+          {caption}
+        </figcaption>
       )}
     </figure>
   )

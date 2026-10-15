@@ -2,8 +2,8 @@ import { MapPin, MessageCircle } from 'lucide-react'
 
 // ── KONTAK ──────────────────────────────────────────────────────────
 // Nomor ditulis dua kali dengan sengaja:
-//   WA_NOMOR  -> hanya angka, dipakai untuk tautan wa.me
-//   WA_TAMPIL -> berspasi, yang dibaca pengunjung
+//   waNomor  -> hanya angka, dipakai untuk tautan wa.me
+//   waTampil -> berspasi, yang dibaca pengunjung
 const KONTAK = {
   nama: 'Pak Dwi Rusmanto',
   jabatan: 'Kepala Dusun Sukomangun',
@@ -15,75 +15,66 @@ const KONTAK = {
 const FOOTER_LINKS = [
   { href: '#potensi', label: 'Potensi' },
   { href: '#galeri', label: 'Galeri' },
-  { href: '#tentang', label: 'Tentang' },
-  { href: '#geografi', label: 'Geografi' },
+  { href: '#tentang', label: 'Sejarah' },
+  { href: '#geografi', label: 'Wilayah' },
   { href: '#peta', label: 'Peta' },
-  { href: '#penduduk', label: 'Penduduk' },
+  { href: '#penduduk', label: 'Warga' },
   { href: '#tradisi', label: 'Tradisi' },
   { href: '#tpq', label: 'TPQ' },
+  { href: '#fasilitas', label: 'Fasilitas' },
   { href: '#kesenian', label: 'Kesenian' },
 ]
 
 export function SiteFooter() {
   return (
-    <footer className="mt-16 border-t border-border bg-muted sm:mt-20 lg:mt-24">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-12 sm:px-6">
-        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          <div className="flex max-w-sm flex-col gap-4">
-            <a href="#beranda" className="flex items-center gap-2 font-serif font-bold">
-              <span>
-                Dusun <span className="text-primary">Sukomangun</span>
-              </span>
+    <footer className="bg-hijau-gelap text-white">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-8">
+        <div className="grid gap-10 py-14 md:grid-cols-[1.3fr_1fr_1fr]">
+          <div className="flex flex-col gap-4">
+            <a href="#beranda" className="flex flex-col font-serif leading-none">
+              <span className="text-sm text-white/70">Dusun</span>
+              <span className="text-2xl font-semibold text-emas-muda">Sukomangun</span>
             </a>
-            <address className="flex items-start gap-2 text-sm not-italic leading-relaxed text-muted-foreground">
-              <MapPin className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
-              <span>
-                Dusun Sukomangun, Desa Genito, Kecamatan Windusari, Kabupaten Magelang,
-                Jawa Tengah
-              </span>
+            <address className="flex items-start gap-2 not-italic leading-relaxed text-white/75">
+              <MapPin className="mt-1 size-4 shrink-0 text-emas-muda" aria-hidden="true" />
+              Dusun Sukomangun, Desa Genito, Kecamatan Windusari, Kabupaten Magelang, Jawa Tengah
             </address>
           </div>
 
           <nav aria-label="Navigasi footer">
-            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
+            <h2 className="text-lg font-semibold">Jelajahi</h2>
+            <ul className="mt-3 grid grid-cols-2 gap-x-6 gap-y-1.5">
               {FOOTER_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-muted-foreground transition-colors hover:text-primary"
-                  >
+                  <a href={link.href} className="text-white/75 transition-colors hover:text-emas-muda">
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
           </nav>
-        </div>
 
-        <div className="flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-col gap-1">
-            <span className="text-sm font-semibold text-foreground">
-              Hubungi {KONTAK.jabatan}
-            </span>
-            <span className="text-sm text-muted-foreground">
-              {KONTAK.nama} &middot; {KONTAK.waTampil}
-            </span>
+          <div className="flex flex-col gap-3">
+            <h2 className="text-lg font-semibold">Hubungi {KONTAK.jabatan}</h2>
+            <p className="text-left text-white/75">
+              {KONTAK.nama}
+              <br />
+              {KONTAK.waTampil}
+            </p>
+            <a
+              href={`https://wa.me/${KONTAK.waNomor}`}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex h-11 w-fit items-center gap-2 rounded-full bg-emas px-5 font-semibold text-white transition-colors hover:bg-emas-muda hover:text-hijau-gelap"
+            >
+              <MessageCircle className="size-4" aria-hidden="true" />
+              Chat WhatsApp
+            </a>
           </div>
-
-          <a
-            href={`https://wa.me/${KONTAK.waNomor}`}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex h-11 w-fit items-center gap-2 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-md shadow-primary/25 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-          >
-            <MessageCircle className="size-4" aria-hidden="true" />
-            Chat WhatsApp {KONTAK.nama}
-          </a>
         </div>
 
-        <div className="flex flex-col gap-2 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>Website profil resmi Dusun Sukomangun &middot;</p>
-          <p>&copy; {new Date().getFullYear()} Dusun Sukomangun.</p>
+        <div className="border-t border-white/10 py-6 text-center text-sm text-white/60">
+          &copy; {new Date().getFullYear()} Dusun Sukomangun. Website profil resmi Dusun Sukomangun.
         </div>
       </div>
     </footer>

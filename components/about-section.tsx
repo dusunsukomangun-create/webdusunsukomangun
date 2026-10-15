@@ -8,19 +8,21 @@ import { Section, SectionHeader } from '@/components/section'
 const FOTO_1 = {
   src: '/images/Gambar-5.jpeg',
   alt: 'Papan nama Nahdlatul Ulama bertuliskan Dsn. Sukomangun, Genito, Windusari, Magelang',
-  caption: '',
+  caption: 'Papan nama dusun',
 }
 const FOTO_2 = {
   src: '/images/dusun-gang-permukiman.jpeg',
   alt: 'Gang permukiman Dusun Sukomangun dengan rumah-rumah berdinding bata dan anak-anak bermain',
-  caption: '',
+  caption: 'Gang permukiman warga',
 }
 // ────────────────────────────────────────────────────────────────────
 
-const HISTORY_CARDS = [
+// Urut dari yang paling lama; tampil selang-seling kiri dan kanan.
+const KISAH = [
   {
-    icon: Landmark,
-    title: 'Tokoh Babad (Pembuka Lahan)',
+    Icon: Landmark,
+    when: 'Masa Babad',
+    title: 'Tokoh Pembuka Lahan',
     body: (
       <>
         Wilayah Sukomangun dahulu dibuka melalui babad lahan oleh dua tokoh yang
@@ -30,26 +32,28 @@ const HISTORY_CARDS = [
     ),
   },
   {
-    icon: ShieldAlert,
+    Icon: ShieldAlert,
+    when: 'Masa Penjajahan',
     title: 'Masa Penjajahan Belanda',
     body: (
       <>
-        Warga turut merasakan pahitnya perjuangan mempertahankan kemerdekaan &mdash;
-        mulai dari rumah yang dibakar, warga yang disiksa, hingga mereka yang gugur
-        dalam sebuah insiden penyerangan. Kisah-kisah ini menjadi bukti bahwa warga
-        Sukomangun turut menanggung beban perjuangan di masa sulit tersebut.
+        Warga turut merasakan pahitnya perjuangan mempertahankan kemerdekaan, mulai dari
+        rumah yang dibakar, warga yang disiksa, hingga mereka yang gugur dalam sebuah
+        insiden penyerangan. Kisah-kisah ini menjadi bukti bahwa warga Sukomangun turut
+        menanggung beban perjuangan di masa sulit tersebut.
       </>
     ),
   },
   {
-    icon: BookOpenText,
+    Icon: BookOpenText,
+    when: 'Hingga Kini',
     title: 'Asal Nama',
     body: (
       <>
         <em>Suko</em> berarti senang, <em>mangun</em> berarti membangun. Perpaduannya
-        bermakna keinginan mewujudkan sesuatu dengan penuh sukacita dan sesegera
-        mungkin, tanpa menunda-nunda &mdash; menjadi filosofi hidup dan semangat gotong
-        royong warga hingga kini.
+        bermakna keinginan mewujudkan sesuatu dengan penuh sukacita dan sesegera mungkin,
+        tanpa menunda-nunda. Makna ini menjadi filosofi hidup dan semangat gotong royong
+        warga hingga kini.
       </>
     ),
   },
@@ -58,40 +62,47 @@ const HISTORY_CARDS = [
 export function AboutSection() {
   return (
     <Section id="tentang">
-      {/* Judul sengaja diletakkan di luar kisi dua kolom. Dengan begitu foto
-          dan kartu keterangan sama-sama mulai dari baris yang sama, tanpa
-          perlu diatur jaraknya secara manual — kesejajarannya tetap terjaga
-          meski panjang judul atau paragrafnya nanti berubah. */}
       <SectionHeader
         eyebrow="Tentang & Sejarah"
-        title="Dari semangat membangun, lahirlah sebuah nama"
+        title="Dari Semangat Membangun, Lahirlah Sebuah Nama"
         description="Dusun Sukomangun menyimpan jejak sejarah panjang sejak zaman kolonial Belanda, dan sebuah nama yang menjadi pesan turun-temurun."
       />
 
-      <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
-        <div className="flex flex-col gap-6">
-          <Photo {...FOTO_1} sizes="(min-width: 1024px) 45vw, 100vw" />
-          <Photo {...FOTO_2} sizes="(min-width: 1024px) 45vw, 100vw" />
-        </div>
-
-        <div className="flex flex-col gap-4">
-          {HISTORY_CARDS.map(({ icon: Icon, title, body }) => (
-            <article
-              key={title}
-              className="flex gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm transition-shadow hover:shadow-md sm:p-6"
+      {/* Garis waktu: garis di tengah, kartu selang-seling kiri dan kanan.
+          Di HP garisnya pindah ke kiri dan semua kartu di kanannya. */}
+      <ol className="relative mx-auto mt-14 max-w-4xl [&_p]:text-left">
+        <span
+          className="absolute bottom-0 left-5 top-0 w-px bg-gradient-to-b from-emas/0 via-emas/60 to-emas/0 md:left-1/2"
+          aria-hidden="true"
+        />
+        {KISAH.map(({ Icon, when, title, body }, i) => (
+          <li
+            key={title}
+            className={`relative mb-10 pl-16 last:mb-0 md:mb-0 md:w-1/2 md:pl-0 ${
+              i % 2 === 0 ? 'md:pr-14' : 'md:ml-auto md:pl-14'
+            } ${i > 0 ? 'md:-mt-12' : ''}`}
+          >
+            <span
+              className={`absolute left-0 top-6 flex size-10 items-center justify-center rounded-full border-2 border-emas bg-kartu text-hijau ${
+                i % 2 === 0 ? 'md:-right-5 md:left-auto' : 'md:-left-5'
+              }`}
             >
-              <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-secondary text-primary">
-                <Icon className="size-5" aria-hidden="true" />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <h3 className="text-lg font-bold">{title}</h3>
-                <p className="text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-                  {body}
-                </p>
-              </div>
+              <Icon className="size-4" aria-hidden="true" />
+            </span>
+            <article className="rounded-2xl border border-garis bg-kartu p-6 shadow-[0_8px_24px_-16px_var(--bayang)]">
+              <span className="inline-block rounded-full bg-lembut px-3 py-1 text-sm font-semibold text-hijau">
+                {when}
+              </span>
+              <h3 className="mt-3 text-xl font-semibold">{title}</h3>
+              <p className="mt-2 leading-relaxed text-pudar">{body}</p>
             </article>
-          ))}
-        </div>
+          </li>
+        ))}
+      </ol>
+
+      <div className="mt-14 grid gap-5 sm:grid-cols-2">
+        <Photo {...FOTO_1} sizes="(min-width: 640px) 50vw, 100vw" />
+        <Photo {...FOTO_2} sizes="(min-width: 640px) 50vw, 100vw" />
       </div>
     </Section>
   )
