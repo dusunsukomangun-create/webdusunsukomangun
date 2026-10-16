@@ -37,7 +37,8 @@
   /* Pita hijau tua dan footer: tetap gelap di kedua mode. */
   --hijau-tua: #1b4d33;
   --hijau-gelap: #133826;
-  --emas: #b8923a;
+  /* Emas tua: kontras ±5:1 di latar putih, cukup untuk tulisan kecil. */
+  --emas: #8a6a1f;
   --emas-muda: #e6c977;
   --garis: #e2e8e0;
   --bayang: rgb(19 56 38 / 0.35);

@@ -65,7 +65,7 @@ export function SiteFooter() {
               href={`https://wa.me/${KONTAK.waNomor}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex h-11 w-fit items-center gap-2 rounded-full bg-emas px-5 font-semibold text-white transition-colors hover:bg-emas-muda hover:text-hijau-gelap"
+              className="inline-flex h-11 w-fit items-center gap-2 rounded-full bg-emas px-5 font-semibold text-white dark:text-hijau-gelap transition-colors hover:bg-emas-muda hover:text-hijau-gelap"
             >
               <MessageCircle className="size-4" aria-hidden="true" />
               Chat WhatsApp
