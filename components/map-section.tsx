@@ -1,16 +1,10 @@
 import { ExternalLink, MapPin, Navigation, Route } from 'lucide-react'
 import { MapEmbed } from '@/components/map-embed'
 import { Section, SectionHeader } from '@/components/section'
+import { LOKASI } from '@/lib/site'
 
-/**
- * Titik yang ditampilkan di peta: tengah permukiman Dusun Sukomangun.
- *
- * Google Maps tidak punya tempat bernama "Dusun Sukomangun" (yang terdaftar
- * hanya masjid dan makamnya), jadi titiknya memakai koordinat.
- * Untuk menggeser titik: buka Google Maps, klik kanan pada lokasi yang
- * diinginkan, salin angka koordinatnya, lalu tempel di sini.
- */
-const MAPS_QUERY = '-7.4007,110.1524'
+// Titik peta (koordinat) diubah di lib/site.ts.
+const MAPS_QUERY = `${LOKASI.lat},${LOKASI.lng}`
 
 const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAPS_QUERY)}`
 

@@ -24,15 +24,13 @@ Situs satu halaman ini mengenalkan sejarah, alam, warga, tradisi, dan kesenian S
 
 ## Mengubah isi situs
 
-Semua teks dan foto ditulis langsung di file komponen, satu file per bagian, di folder [`components/`](components/). Tidak perlu database.
+📖 **Baca [PANDUAN.md](PANDUAN.md)**: langkah demi langkah mengganti teks, foto, kontak WhatsApp, dan titik peta lewat browser, tanpa perlu memasang aplikasi apa pun.
 
-**Mengganti atau menambah foto**
+Ringkasnya:
 
-1. Kecilkan fotonya dulu — sisi terpanjang sekitar 1600 px, ukuran di bawah 400 KB (bisa lewat [squoosh.app](https://squoosh.app)).
-2. Simpan di `public/images/` dengan nama huruf kecil tanpa spasi, misalnya `masjid-lama.jpeg`.
-3. Buka file bagiannya (misalnya `components/facilities-section.tsx`), cari blok bertanda `── FOTO ──` di bagian atas, lalu ganti `src` dan `alt`-nya.
-
-**Kontak kepala dusun** ada di [`components/site-footer.tsx`](components/site-footer.tsx). **Alamat situs** (untuk SEO dan peta situs) ada di [`lib/site.ts`](lib/site.ts).
+- Teks dan foto setiap bagian ada di folder [`components/`](components/), satu file per bagian halaman.
+- Kontak kepala dusun, titik peta, dan alamat situs dikumpulkan di [`lib/site.ts`](lib/site.ts).
+- Setiap cabang (*branch*) otomatis mendapat alamat pratinjau dari Vercel; cabang `main` langsung tayang di situs utama.
 
 ## Menjalankan di komputer sendiri
 
@@ -48,11 +46,12 @@ Lalu buka [http://localhost:3000](http://localhost:3000). Untuk memeriksa hasil 
 ## Teknologi
 
 [Next.js 16](https://nextjs.org) (App Router) · React 19 · Tailwind CSS 4 · ikon [Lucide](https://lucide.dev) · di-hosting di [Vercel](https://vercel.com)
+
 ## Struktur folder
 
 ```
 app/            Tata letak halaman, metadata SEO, sitemap, robots.txt
 components/     Satu file per bagian halaman, plus galeri & bingkai foto
-lib/            Alamat situs dan fungsi bantu
+lib/            Data penting (kontak, titik peta, alamat situs) dan fungsi bantu
 public/images/  Foto yang tampil di situs
 ```

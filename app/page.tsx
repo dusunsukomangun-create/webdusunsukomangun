@@ -7,12 +7,14 @@ import { MapSection } from '@/components/map-section'
 import { PopulationSection } from '@/components/population-section'
 import { SiteFooter } from '@/components/site-footer'
 import { SiteNavbar } from '@/components/site-navbar'
+import { StructuredData } from '@/components/structured-data'
 import { TpqSection } from '@/components/tpq-section'
 import { TraditionSection } from '@/components/tradition-section'
 
 export default function Page() {
   return (
     <>
+      <StructuredData />
       <SiteNavbar />
       <main>
         <HeroSection />

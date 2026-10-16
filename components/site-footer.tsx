@@ -1,16 +1,6 @@
 import { MapPin, MessageCircle } from 'lucide-react'
-
-// ── KONTAK ──────────────────────────────────────────────────────────
-// Nomor ditulis dua kali dengan sengaja:
-//   waNomor  -> hanya angka, dipakai untuk tautan wa.me
-//   waTampil -> berspasi, yang dibaca pengunjung
-const KONTAK = {
-  nama: 'Pak Dwi Rusmanto',
-  jabatan: 'Kepala Dusun Sukomangun',
-  waNomor: '6281770889686',
-  waTampil: '+62 817 7088 9686',
-}
-// ────────────────────────────────────────────────────────────────────
+// Nama dan nomor WhatsApp kepala dusun diubah di lib/site.ts.
+import { KONTAK } from '@/lib/site'
 
 const FOOTER_LINKS = [
   { href: '#potensi', label: 'Potensi' },
