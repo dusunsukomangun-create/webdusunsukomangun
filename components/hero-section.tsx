@@ -100,7 +100,7 @@ export function HeroSection() {
 
           <a
             href="#potensi"
-            className="mt-9 inline-flex h-12 items-center gap-2 rounded-full bg-emas px-7 font-semibold text-white shadow-lg shadow-black/20 transition-colors hover:bg-emas-muda hover:text-hijau-gelap"
+            className="mt-9 inline-flex h-12 items-center gap-2 rounded-full bg-emas px-7 font-semibold text-white dark:text-hijau-gelap shadow-lg shadow-black/20 transition-colors hover:bg-emas-muda hover:text-hijau-gelap"
           >
             Jelajahi Dusun
           </a>

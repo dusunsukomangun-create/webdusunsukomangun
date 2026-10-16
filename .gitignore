@@ -17,3 +17,7 @@ node_modules
 # TypeScript build artifacts
 *.tsbuildinfo
 next-env.d.ts
+
+# Salinan foto asli sebelum dikompres (hanya di komputer ini)
+foto-asli/
+foto-cadangan/

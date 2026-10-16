@@ -1,15 +1,17 @@
 import { ExternalLink, MapPin, Navigation, Route } from 'lucide-react'
+import { MapEmbed } from '@/components/map-embed'
 import { Section, SectionHeader } from '@/components/section'
 
 /**
- * Titik yang ditampilkan di peta.
- * Untuk memakai koordinat persis: buka Google Maps, klik kanan pada titik yang
+ * Titik yang ditampilkan di peta: tengah permukiman Dusun Sukomangun.
+ *
+ * Google Maps tidak punya tempat bernama "Dusun Sukomangun" (yang terdaftar
+ * hanya masjid dan makamnya), jadi titiknya memakai koordinat.
+ * Untuk menggeser titik: buka Google Maps, klik kanan pada lokasi yang
  * diinginkan, salin angka koordinatnya, lalu tempel di sini.
- * Contoh: const MAPS_QUERY = '-7.3712345,110.1234567'
  */
-const MAPS_QUERY = 'Masjid Dusun Sukomangun, Genito, Windusari, Magelang, Jawa Tengah'
+const MAPS_QUERY = '-7.4007,110.1524'
 
-const MAPS_EMBED = `https://maps.google.com/maps?q=${encodeURIComponent(MAPS_QUERY)}&z=16&output=embed`
 const MAPS_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAPS_QUERY)}`
 
 const DETAILS = [
@@ -67,13 +69,9 @@ export function MapSection() {
           </a>
         </div>
 
-        <iframe
-          src={MAPS_EMBED}
+        <MapEmbed
+          query={MAPS_QUERY}
           title="Peta lokasi Dusun Sukomangun, Desa Genito, Kecamatan Windusari, Kabupaten Magelang"
-          loading="lazy"
-          allowFullScreen
-          referrerPolicy="no-referrer-when-downgrade"
-          className="h-[340px] w-full rounded-2xl border-0 bg-garis shadow-[0_12px_32px_-12px_var(--bayang)] sm:h-[420px] lg:h-full lg:min-h-[460px]"
         />
       </div>
     </Section>
