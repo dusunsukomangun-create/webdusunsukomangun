@@ -75,7 +75,7 @@ export function HeroSection() {
           aria-hidden="true"
         />
 
-        <div className="relative mx-auto flex max-w-4xl flex-col items-center px-5 pt-16 text-center">
+        <div className="pembuka relative mx-auto flex max-w-4xl flex-col items-center px-5 pt-16 text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
             <MapPin className="size-4 text-emas-muda" aria-hidden="true" />
             Desa Genito, Windusari, Kabupaten Magelang

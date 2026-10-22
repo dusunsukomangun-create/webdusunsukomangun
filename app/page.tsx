@@ -6,6 +6,7 @@ import { FacilitiesSection } from '@/components/facilities-section'
 import { MapSection } from '@/components/map-section'
 import { PopulationSection } from '@/components/population-section'
 import { SiteFooter } from '@/components/site-footer'
+import { ScrollReveal } from '@/components/scroll-reveal'
 import { SiteNavbar } from '@/components/site-navbar'
 import { StructuredData } from '@/components/structured-data'
 import { TpqSection } from '@/components/tpq-section'
@@ -15,6 +16,7 @@ export default function Page() {
   return (
     <>
       <StructuredData />
+      <ScrollReveal />
       <SiteNavbar />
       <main>
         <HeroSection />

@@ -109,3 +109,46 @@
     scroll-behavior: auto;
   }
 }
+
+/* ── ANIMASI ──────────────────────────────────────────────────────────
+   Semua animasi hanya berjalan bila pengunjung tidak menyalakan setelan
+   "kurangi gerakan" di perangkatnya. */
+@media (prefers-reduced-motion: no-preference) {
+  /* Pembuka: isi beranda (dan halaman 404) muncul berurutan dari bawah
+     sejak halaman pertama kali tampil. Murni CSS, tidak menunggu JavaScript. */
+  @keyframes masuk {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+  }
+  .pembuka > * {
+    animation: masuk 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .pembuka > :nth-child(2) { animation-delay: 0.12s; }
+  .pembuka > :nth-child(3) { animation-delay: 0.24s; }
+  .pembuka > :nth-child(4) { animation-delay: 0.36s; }
+  .pembuka > :nth-child(5) { animation-delay: 0.48s; }
+  .pembuka > :nth-child(n + 6) { animation-delay: 0.6s; }
+
+  /* Muncul saat digulir: diatur oleh components/scroll-reveal.tsx.
+     Kelas `gerak` baru dipasang setelah JavaScript siap, jadi bila
+     JavaScript gagal dimuat, semua isi tetap tampil seperti biasa. */
+  html.gerak [data-muncul],
+  html.gerak [data-muncul-bergantian] > * {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  /* Isi kisi/daftar muncul bergantian, satu per satu. */
+  html.gerak [data-muncul-bergantian] > * {
+    transition-delay: calc(var(--urutan, 0) * 100ms);
+  }
+  html.gerak [data-muncul].terlihat,
+  html.gerak [data-muncul-bergantian].terlihat > * {
+    opacity: 1;
+    transform: none;
+  }
+}
