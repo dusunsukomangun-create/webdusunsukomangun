@@ -17,7 +17,7 @@ const TAUTAN = [
 
 export default function NotFound() {
   return (
-    <main className="flex min-h-[100svh] flex-col items-center justify-center bg-lembut px-5 py-16 text-center">
+    <main className="pembuka flex min-h-[100svh] flex-col items-center justify-center bg-lembut px-5 py-16 text-center">
       <Link href="/" className="flex flex-col font-serif leading-none">
         <span className="text-sm text-pudar">Dusun</span>
         <span className="text-2xl font-semibold text-hijau-kuat">Sukomangun</span>
